@@ -39,14 +39,14 @@
 **Domain model**
 * Diagram (maybe also Bio4jExplorer??)
 
-### Slide 16
-**Technology options** --> Titan and Neo4j
-
-### Slide 17 
+### Slide 16 
 **Blueprints layer**
 _Apart from the set of interfaces developed as the first layer for the domain model there's an extra layer that uses Blueprints. This way we’re going one step further for making the domain model independent from the choice of database technology._
 
-###  Slide 17-22
+### Slide 17
+**Technology options** --> Titan and Neo4j
+
+###  Slide 18-22
 **Neo4j** option
 
 * Cypher
