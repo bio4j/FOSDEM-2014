@@ -49,11 +49,21 @@ _Apart from the set of interfaces developed as the first layer for the domain mo
 ###  Slide 17-22
 **Neo4j** option
 
+* Cypher
+* Gremlin
+* Java API
+* Visualizations?
+
 ### Slide 23-28
 **Titan** option
 
 ### Slide 29-31
 **Bio4j and the Cloud**
+* Interoperability and data distribution
+* Backup and storage
+* Scalability
+* Cost-effective
+* Applications and service providers on the cloud
 
 ### Slide 32
 Using **github** together with Bio4j & SBT ? 
