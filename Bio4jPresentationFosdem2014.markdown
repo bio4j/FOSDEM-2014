@@ -18,9 +18,9 @@
 
 ###  Slide 9
 **Some numbers**
-* relationships
-* nodes
-* properties...
+* 1.216.993.547 relationships
+* 190.625.351 nodes
+* 584.436.429 properties...
 
 ###  Slide 10-11
 **A bit of history**
@@ -39,8 +39,12 @@
 **Domain model**
 * Diagram (maybe also Bio4jExplorer??)
 
-###  Slide 16
+### Slide 16
 **Technology options** --> Titan and Neo4j
+
+### Slide 17 
+**Blueprints layer**
+_Apart from the set of interfaces developed as the first layer for the domain model there's an extra layer that uses Blueprints. This way we’re going one step further for making the domain model independent from the choice of database technology._
 
 ###  Slide 17-22
 **Neo4j** option
