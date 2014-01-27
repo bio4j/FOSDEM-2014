@@ -15,6 +15,12 @@
 
 ### Slide 8
 **Data sources (modules)**
+* Gene Ontology (GO)
+* ExPASy Enzyme DB
+* RefSeq
+* UniRef --> 50, 90, 100
+* NCBI taxonomy tree --> GI index
+* Uniprot KB --> Swissprot/Trembl, interactions...
 
 ###  Slide 9
 **Some numbers**
