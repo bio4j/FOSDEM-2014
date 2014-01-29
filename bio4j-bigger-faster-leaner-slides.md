@@ -172,25 +172,53 @@ Using **github** together with Bio4j & SBT ?
 
 ### use cases
 
-* BG7 (again?)
-* MG7
-* Ohnogaps?
-* Nispero?
-* Ohio State blablaba?
-* Berkeley blablabla?
+Our tools
+
+* **[bg7](http://bg7.ohnosequences.com)** genome annotation
+* **mg7** metagenomics analysis
+* ...
+
+----
+
+### use cases
+
+* **Ohio State University** explain, explain
+
+----
+
+### use cases
+
+* **Berkeley** explain, explain
 
 ----
 
 ### community
 
-* LinkedIn
-* Github
-* Google group
-* Twitter
-* Etc...
+* **[\@bio4j](http://twitter.com/bio4j)** twitter
+* **[bio4j](https://github.com/bio4j)** github org
+* **[bio4j-user](http://groups.google.com/group/bio4j-user)** google group
+* **[bio4j](http://www.linkedin.com/groups/Bio4j-3890937)** linkedin
 
 ----
 
-###  team
+### team
+
+- **[Pablo Pareja](http://ohnosequences.com/ppareja)** <br />
+    project leader & main dev
+- **[Eduardo Pareja-Tobes](http://ohnosequences.com/eparejatobes)**<br /> 
+    technology, architecture
+- **[Raquel Tobes](http://ohnosequences.com/rtobes)** <br />
+    bio data integration
+
+----
+
+### team
+
+- **[Alexey Alekhin](http://ohnosequences.com/aalekhin)** <br />
+    Statika, release process, dev
+- **[Marina Manrique](http://ohnosequences.com/mmanrique)** <br />
+    bio data integration
+- **[Evdokim Kovach](http://ohnosequences.com/ekovach)**<br /> 
+    dev
 
 ----
