@@ -69,13 +69,21 @@ Sort of short abstract of the project
 
 ### Bio4j structure
 
-* Modules and relationship among them
+Modules and relationship among them
+
+----
+
+### Bio4j APIs
+
+> 1. abstract **domain model**
+> 2. **Blueprints** implementation
+> 3. **technology-specific** versions
 
 ----
 
 ### domain model
 
-* Diagram (maybe also Bio4jExplorer??)
+Diagram (maybe also Bio4jExplorer??)
 
 ----
 
@@ -86,31 +94,55 @@ Sort of short abstract of the project
 
 ----
 
+### domain model _why?_
+
+- abstract over Blueprints
+- more precise **typing**
+- implementations can use technology-specific features
+
+----
+
+**Key advantage** 
+
+_Different_ **graph topologies** at the storage level, _same_ **domain model**. 
+
+Example: use **type nodes** in _Titan_, **labels** in _Neo4j_.
+
+----
+
 ### Blueprints layer
+
+A default **[Blueprints](https://github.com/tinkerpop/blueprints/)** implementation of the abstract model.
+
+----
 
 Apart from the set of interfaces developed as the **first layer** for the _domain model_ there's an **extra layer** that uses _Blueprints_. This way we’re going one step further for making the domain model **independent** from the choice of _database technology_
 
 ----
 
-### technology options
+### technology-specific
 
-**Titan** and **Neo4j**
+Optimizations, features, etc.
 
-----
-
-### Neo4j
-
-* Cypher
-* Gremlin
-* Java API
-* Visualizations?
+* **[Neo4j](https://github.com/neo4j/neo4j)** 
+* **[Titan](https://github.com/thinkaurelius/titan/)** (WIP)
+* **[OrientDB](https://github.com/orientechnologies/orientdb/)** (planned)
 
 ----
 
-### Titan
+### why Neo4j
 
-* **local** indexes
-* **type** definitions -> _constraints!_
+> * wide **adoption**
+> * stable
+> * **Cypher**
+
+----
+
+### why Titan
+
+> * **local!** indexes
+> * **on-disk** access
+> * **type** definitions -> _constraints!_
 
 ----
 
