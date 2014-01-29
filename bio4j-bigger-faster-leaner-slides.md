@@ -164,7 +164,17 @@ Using **github** together with Bio4j & SBT ?
 
 ### dev and release process
 
-* Mention Statika??
+* coordinate data and code releases
+* [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
+* Cloud (AWS) integration
+
+----
+
+### how?
+
+- **[Statika](http://ohnosequences/statika)** AWS, data + code
+- **[sbt](https://github.com/sbt/sbt)** Java + Scala, automated bio4j-specific release, test
+- **[github](https://github.com/bio4j)** collaboration, docs, everything
 
 ----
 
