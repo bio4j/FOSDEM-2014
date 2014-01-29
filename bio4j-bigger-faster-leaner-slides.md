@@ -76,6 +76,10 @@ Sort of short abstract of the project
 
 ----
 
+![](Bio4jDomainModelWithCardinality.jpg)
+
+----
+
 ### Blueprints layer
 
 Apart from the set of interfaces developed as the **first layer** for the _domain model_ there's an **extra layer** that uses _Blueprints_. This way we’re going one step further for making the domain model **independent** from the choice of _database technology_

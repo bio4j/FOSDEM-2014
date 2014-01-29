@@ -2,15 +2,12 @@
 <head>
 <meta charset="utf-8">
   <title></title>
-
 <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
 <style>
-  html { background-color: #425331; height: 100%;}
+  html { background-color: #425331; }
   body { 
-
-    background-color: #102126; 
-    color: #f9f9f9;
-    height: 100%;
+    background-color: #f9fcfe; 
+    color: #414141;
     text-align: left;
   }
   /* A section is a slide. It's size is 800x600, and this will never change */
@@ -18,37 +15,29 @@
 
     display: inline-block;
     font-family: Open Sans, sans;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 225%; /* 16 * 2.25 = 36 */
-    line-height: 1.333;
-    color: #bababa;
+    color: #535353;
   }
 
-  ul, ol {  padding-bottom: 1.333em;  }
   p { margin-bottom: 1.333em; }
-  strong {  color: #df6b62; }
-  em {  font-weight: 400; color: #fdfdfd;}
-  .MathJax { color: #fdfdfd;}
+  strong { color: #b8913d; } 
+  em {  font-weight: 400; color: #121212; }
   code {  font-family: PT Mono; font-size: 76%; }
-  pre { font-size: .75em; line-height: 1em; }
- 
   address, blockquote, dl, fieldset, p, form, h1, h2, h3, h4, 
   h5, h6, hr, ol, pre, table, ul, dl { 
-
     vertical-align: middle;
   }
-
   h1, h2, h3 {
-
     margin-top:0; margin-bottom:0;
     letter-spacing: -1px;
     text-align: center;
     font-family: Bitter;
     font-weight: normal;
-    color: #e7c376;
+    color: #b8463d;
   }
-
   h1 {  font-size:2em; padding: 0.6666em 0; }
+  h1 { padding-top: 0; }
   h2 {  font-size:1.75em; padding:0.381em 0;  }
   h3 {  
     font-size: 1.5em; 
@@ -58,43 +47,39 @@
     padding-right: 0;
     text-align: left; 
   }
-  ul { list-style-type: circle;}
-  ol { list-style-type: decimal;}
-  ul, ol {
-    margin: 0 0;
-    margin-left: 2em;
-  }
-  li { text-align: left; }
-
   section.titleslide h1 {}
   h1.title { 
-
     text-align: right;
-    font-size: 3em;
+    font-size: 2.4em;
     font-family: Bitter;
     font-weight: bold; 
     font-style: italic;
-    /*font-size: 4em; */
-    color: #df6b62;
+    color: #b8913d;
+    padding: 0.6666em 0;
+    padding-bottom: 0;
   }
-  h2.author { 
-
+    h2.author { 
     font-size: 1.25em;
     font-family: Open Sans;
     text-align: right;
     margin: 0 0 0 0;
-    font-weight: 300; color:#5f9ea6; }
+    font-weight: 300; color:#266871; 
+  }
   h3.date { 
-
     text-align: right;
     font-size: 1em;
     font-family: Open Sans;
     margin: 0 0 0 0;
-    font-weight: 300; font-style: normal;}
-
+    font-weight: 300; font-style: normal;
+  }
+  ul { list-style-type: round;}
+  ol { list-style-type: decimal;}
+  ul, ol {
+    margin: 10px 10px 10px 80px;
+  }
+  li { text-align: left; }
   q { quotes: "“" "”" "‘" "’"; }
   blockquote { 
-
     margin-top: 1.333em;
     padding-top: 1.333em;
     padding-bottom: 1.333em; 
@@ -102,12 +87,12 @@
     padding-right: 2em;
     font-style: italic;
     text-align: right;
-    border-right: 6px solid #e7c376;
-    background-color: #153037;
+    border-right: 6px solid #b8463d;
+    background-color: #f2f2f2;
   }
-  a:link {color:#5f9ea6; text-decoration: none;}      /* unvisited link */
-  a:visited {color:#5f9ea6; text-decoration: none;}  /* visited link */
-  a:hover {color:#5f9ea6;}  /* mouse over link */
+  a:link {color:#266871; text-decoration: none;}      /* unvisited link */
+  a:visited {color:#266871; text-decoration: none;}  /* visited link */
+  a:hover {color:#569ca6;}  /* mouse over link */
   a:active {color:#3e7f89;}  /* selected link */
 
   /* Figures are displayed full-page, with the caption on
@@ -116,10 +101,7 @@
     background-color: transparent;
     overflow: visible;
   }
-
-  
   img:first-of-type {
-
     margin-left: -80px;
     margin-top: -120px;
     position:absolute;
@@ -129,9 +111,7 @@
     left: 0;
     z-index: -1;
   }
-
   figure > img {
-
     width: 800px !important;
     height: 600px !important;
     margin-left: -80px;
@@ -201,15 +181,60 @@
   .incremental > * { opacity: 1; }
 
   /* The current item */
-  .incremental > *[aria-selected] { background-color: #153037; opacity: 1; font-weight: 500;}
-  li[aria-selected] { list-style-type: disc;}
+  .incremental > *[aria-selected] { color: #b8913d; opacity: 1; font-weight: 500;}
 
   /* The items to-be-selected */
-  .incremental > *[aria-selected] ~ * { opacity: 0.2; }
+  .incremental > *[aria-selected] ~ * { opacity: 0.3; }
+
+  /*logos*/
+  #logos_div {
+    position: absolute;
+    
+  }
+  #ohnoseq_logo_div {}
+  #ohnoseq_logo {
+    /*6.132867133*/
+    height: 20px; width: 123px;
+    top:570px;
+    left: 730px;
+    position: relative;
+  }
+  #era7_logo_div {}
+  #era7_logo {
+    /*4.866071429*/
+    height: 20px; width: 97px;
+    position: relative;
+    top: 540px;
+    left: 755px;
+  }
+  #bio4j_logo {
+    /*1.236979167*/
+    height: 64px; width: 80px;
+    position: relative;  
+    top:45px;
+    left: 780px;
+  }
 </style>
 </head>
-
 <body>
+<div id="logos_div">
+  <div id="ohnoseq_logo_div">
+    <a href="http://ohnosequences.com">
+      <img id="ohnoseq_logo" src="ohnoseq-logo.png">
+    </a>
+  </div>
+  </div>
+  <div id="era7_logo_div">
+    <a href="http://era7bioinformatics.com">
+      <img id="era7_logo" src="era7-logo.png">
+    </a>
+  </div>
+  <div id="bio4j_logo_div">
+    <a href="http://bio4j.com">   
+      <img id="bio4j_logo" src="bio4j-logo.png">
+    </a>
+  </div>
+</div> 
 <section id="bio4j-bigger-faster-leaner" class="titleslide slide level1"><h1>Bio4j: bigger, faster, leaner</h1></section><section class="slide level2">
 
 <h3 id="what-is-bio4j">what is Bio4j</h3>
@@ -278,6 +303,11 @@
 <ul>
 <li>Diagram (maybe also Bio4jExplorer??)</li>
 </ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="Bio4jDomainModelWithCardinality.jpg" />
+</figure>
 </section><section class="slide level2">
 
 <h3 id="blueprints-layer">Blueprints layer</h3>
