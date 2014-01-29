@@ -51,6 +51,8 @@ Sort of short abstract of the project
 * `1,216,993,547` relationships
 * `190,625,351` nodes
 * `584,436,429` properties
+* `144` relationship types
+* `42` node types
 
 ----
 
