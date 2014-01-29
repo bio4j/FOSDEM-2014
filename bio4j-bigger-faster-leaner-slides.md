@@ -156,25 +156,19 @@ Optimizations, features, etc.
 
 ----
 
-### github?
-
-Using **github** together with Bio4j & SBT ? 
-
-----
-
 ### dev and release process
 
-* coordinate data and code releases
-* [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
-* Cloud (AWS) integration
+* coordinate **data** and **code**
+* **[Semantic Versioning](http://semver.org/spec/v2.0.0.html)**
+* **Cloud** integration, distribution, deployment, ...
 
 ----
 
 ### how?
 
-- **[Statika](http://ohnosequences/statika)** AWS, data + code
-- **[sbt](https://github.com/sbt/sbt)** Java + Scala, automated bio4j-specific release, test
-- **[github](https://github.com/bio4j)** collaboration, docs, everything
+- **[Statika](http://ohnosequences/statika)** cloud, data + code, modules (see [next talk](https://fosdem.org/2014/schedule/event/graphdevroom_bio4j_1/))
+- **[sbt](https://github.com/sbt/sbt)** build Java + Scala, automated Bio4j-specific test & release
+- **[git + github](https://github.com/bio4j)** versioning, docs, collaboration, coordination
 
 ----
 
