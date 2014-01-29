@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-  <meta name="author" content="Pablo Pareja" />
-  <title>Bio4j</title>
+  <meta name="author" content="Alexey Alekhin" />
+  <title>Bio4j + Statika</title>
 <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
 <style>
   html { background-color: #425331; }
@@ -219,8 +219,8 @@
 </head>
 <body>
 <section>
-  <h1 class="title">Bio4j</h1>
-  <h2 class="author"><a href="http://twitter.com/pablopareja">Pablo Pareja</a></h2>
+  <h1 class="title">Bio4j + Statika</h1>
+  <h2 class="author"><a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a></h2>
   <h3 class="date">GraphDevRoom 2014</h3>
 </section>
 <div id="logos_div">
@@ -241,175 +241,34 @@
     </a>
   </div>
 </div> 
-<section id="what-is-bio4j" class="slide level2">
-<h1>what is Bio4j</h1>
-<p>Sort of short abstract of the project</p>
-</section>
-<section id="section" class="slide level2">
-<h1><!-- 4 or more '-' create a new slide --></h1>
-<h3 id="open-source">open source</h3>
+<section id="bio4j-statika-managing-module-dependencies-on-the-type-level" class="titleslide slide level1"><h1>Bio4j + Statika: Managing module dependencies on the type level</h1></section><section class="slide level2">
+
+<h3 id="bio4j-modules">Bio4j modules</h3>
 <ul>
-<li><strong>code</strong> <strong><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a></strong></li>
-<li><strong>data</strong> integrates only <strong><a href="http://okfn.org/opendata/">open data</a></strong></li>
+<li>diagram of dependencies</li>
+<li>a lot of data in modules =&gt;</li>
+<li>importance of possibility to import only what you need</li>
+<li>different releases/distributions</li>
+<li>(?) importance of doing it in the cloud</li>
 </ul>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<h3 id="biology-dbs-today">biology &amp; DBs today</h3>
+<h3 id="what-is-statika">What is Statika</h3>
 <ul>
-<li>Problems with technology choices (RDB and so on)</li>
-<li>Biology is a graph and all that blablabla</li>
+<li>scala type system</li>
+<li>generic modular system</li>
+<li>layers: code + sbt + AWS</li>
+<li>accent on static thing</li>
 </ul>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<h3 id="data-sources---modules">data sources - modules</h3>
-<!-- 
-  the '>' symbol here is for showing items incrementally 
--->
-<ul class="incremental">
-<li>Gene Ontology (GO)</li>
-<li>ExPASy Enzyme DB</li>
-<li>RefSeq</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="data-sources---modules-1">data sources - modules</h3>
-<ul class="incremental">
-<li>UniRef –&gt; 50, 90, 100</li>
-<li>NCBI taxonomy tree -&gt; GI index</li>
-<li>Uniprot KB -&gt; Swissprot/Trembl, interactions…</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="numbers">numbers</h3>
-<p><strong>Some numbers</strong></p>
+<h3 id="bio4j-statika">Bio4j + Statika</h3>
 <ul>
-<li><code>1,216,993,547</code> relationships</li>
-<li><code>190,625,351</code> nodes</li>
-<li><code>584,436,429</code> properties</li>
+<li>declaring layout of existing modules using statika bundles (pic of the hierarchy)</li>
+<li>respecting dependencies on different levels (raw data inter-deps, modules depend on raw data + their own interdeps)</li>
+<li>(?) possibility to make incremental import of modules to existing releases</li>
+<li>ease and robustness of releasing (incl. tests) and deployment (thnx to aws-statika part + statika-cli for applying bundles)</li>
 </ul>
-</section>
-<section class="slide level2">
-
-<h3 id="a-bit-of-history">a bit of history</h3>
-<ul>
-<li>How it all started (Gene Ontology &amp; BG7)</li>
-<li>How it became the BigData platform it is today</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="the-property-graph-model">the property graph model</h3>
-<ul>
-<li>Simple explanation with a couple of samples</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="bio4j-structure">Bio4j structure</h3>
-<ul>
-<li>Modules and relationship among them</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="domain-model">domain model</h3>
-<ul>
-<li>Diagram (maybe also Bio4jExplorer??)</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<!-- 
-  it looks deformed because of the aspect ratio; it should be at least 4:3
--->
-<figure>
-<img src="Bio4jDomainModelWithCardinality.jpg" />
-</figure>
-</section>
-<section class="slide level2">
-
-<h3 id="blueprints-layer">Blueprints layer</h3>
-<p>Apart from the set of interfaces developed as the <strong>first layer</strong> for the <em>domain model</em> there’s an <strong>extra layer</strong> that uses <em>Blueprints</em>. This way we’re going one step further for making the domain model <strong>independent</strong> from the choice of <em>database technology</em></p>
-</section>
-<section class="slide level2">
-
-<h3 id="technology-options">technology options</h3>
-<p><strong>Titan</strong> and <strong>Neo4j</strong></p>
-</section>
-<section class="slide level2">
-
-<h3 id="neo4j">Neo4j</h3>
-<ul>
-<li>Cypher</li>
-<li>Gremlin</li>
-<li>Java API</li>
-<li>Visualizations?</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="titan">Titan</h3>
-<ul>
-<li><strong>local</strong> indexes</li>
-<li><strong>type</strong> definitions -&gt; <em>constraints!</em></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h4 id="bio4j-and-the-cloud">Bio4j and the cloud</h4>
-<ul>
-<li>Interoperability and data distribution</li>
-<li>Backup and storage</li>
-<li>Scalability</li>
-<li>Cost-effective</li>
-<li>Applications and service providers on the cloud</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="github">github?</h3>
-<p>Using <strong>github</strong> together with Bio4j &amp; SBT ?</p>
-</section>
-<section class="slide level2">
-
-<h3 id="dev-and-release-process">dev and release process</h3>
-<ul>
-<li>Mention Statika??</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="use-cases">use cases</h3>
-<ul>
-<li>BG7 (again?)</li>
-<li>MG7</li>
-<li>Ohnogaps?</li>
-<li>Nispero?</li>
-<li>Ohio State blablaba?</li>
-<li>Berkeley blablabla?</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="community">community</h3>
-<ul>
-<li>LinkedIn</li>
-<li>Github</li>
-<li>Google group</li>
-<li>Twitter</li>
-<li>Etc…</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="team">team</h3>
-</section>
-<section class="slide level2">
-
 </section>
 <!-- {{{{ dzslides core
 #

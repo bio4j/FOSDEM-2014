@@ -1,8 +1,10 @@
-# Bio4j: bigger, faster, leaner
+% Bio4j
+% [Pablo Pareja](http://twitter.com/pablopareja)
+% GraphDevRoom 2014
 
 ----
 
-### what is Bio4j
+## what is Bio4j
 
 Sort of short abstract of the project
 
@@ -11,7 +13,8 @@ Sort of short abstract of the project
 
 ### open source
 
-**Bio4j is opensource!** AGPLv3, open data
+- **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
+- **data** integrates only **[open data](http://okfn.org/opendata/)**
 
 ----
 
@@ -45,9 +48,9 @@ Sort of short abstract of the project
 
 **Some numbers**
 
-* 1.216.993.547 relationships
-* 190.625.351 nodes
-* 584.436.429 properties
+* `1,216,993,547` relationships
+* `190,625,351` nodes
+* `584,436,429` properties
 
 ----
 
@@ -76,6 +79,9 @@ Sort of short abstract of the project
 
 ----
 
+<!-- 
+  it looks deformed because of the aspect ratio; it should be at least 4:3
+-->
 ![](Bio4jDomainModelWithCardinality.jpg)
 
 ----
@@ -102,6 +108,9 @@ Apart from the set of interfaces developed as the **first layer** for the _domai
 ----
 
 ### Titan
+
+* **local** indexes
+* **type** definitions -> _constraints!_
 
 ----
 

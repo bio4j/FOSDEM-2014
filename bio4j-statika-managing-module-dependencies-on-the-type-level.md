@@ -1,3 +1,7 @@
+% Bio4j + Statika
+% [Alexey Alekhin](http://ohnosequences.com/aalekhin)
+% GraphDevRoom 2014
+
 # Bio4j + Statika: Managing module dependencies on the type level
 
 <!--
@@ -16,12 +20,16 @@ Bio4j bioinformatics graph database is modular and customizable, allowing you to
 - different releases/distributions
 - (?) importance of doing it in the cloud
 
+----
+
 ### What is Statika
 
 - scala type system
 - generic modular system
 - layers: code + sbt + AWS
 - accent on static thing
+
+----
 
 ### Bio4j + Statika
 
