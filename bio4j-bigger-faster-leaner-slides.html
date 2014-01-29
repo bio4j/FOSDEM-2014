@@ -310,16 +310,21 @@
 <section class="slide level2">
 
 <h3 id="bio4j-structure">Bio4j structure</h3>
-<ul>
-<li>Modules and relationship among them</li>
-</ul>
+<p>Modules and relationship among them</p>
+</section>
+<section class="slide level2">
+
+<h3 id="bio4j-apis">Bio4j APIs</h3>
+<ol class="incremental" type="1">
+<li>abstract <strong>domain model</strong></li>
+<li><strong>Blueprints</strong> implementation</li>
+<li><strong>technology-specific</strong> versions</li>
+</ol>
 </section>
 <section class="slide level2">
 
 <h3 id="domain-model">domain model</h3>
-<ul>
-<li>Diagram (maybe also Bio4jExplorer??)</li>
-</ul>
+<p>Diagram (maybe also Bio4jExplorer??)</p>
 </section>
 <section class="slide level2">
 
@@ -332,29 +337,53 @@
 </section>
 <section class="slide level2">
 
-<h3 id="blueprints-layer">Blueprints layer</h3>
-<p>Apart from the set of interfaces developed as the <strong>first layer</strong> for the <em>domain model</em> there’s an <strong>extra layer</strong> that uses <em>Blueprints</em>. This way we’re going one step further for making the domain model <strong>independent</strong> from the choice of <em>database technology</em></p>
-</section>
-<section class="slide level2">
-
-<h3 id="technology-options">technology options</h3>
-<p><strong>Titan</strong> and <strong>Neo4j</strong></p>
-</section>
-<section class="slide level2">
-
-<h3 id="neo4j">Neo4j</h3>
+<h3 id="domain-model-why">domain model <em>why?</em></h3>
 <ul>
-<li>Cypher</li>
-<li>Gremlin</li>
-<li>Java API</li>
-<li>Visualizations?</li>
+<li>abstract over Blueprints</li>
+<li>more precise <strong>typing</strong></li>
+<li>implementations can use technology-specific features</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="titan">Titan</h3>
+<p><strong>Key advantage</strong></p>
+<p><em>Different</em> <strong>graph topologies</strong> at the storage level, <em>same</em> <strong>domain model</strong>.</p>
+<p>Example: use <strong>type nodes</strong> in <em>Titan</em>, <strong>labels</strong> in <em>Neo4j</em>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="blueprints-layer">Blueprints layer</h3>
+<p>A default <strong><a href="https://github.com/tinkerpop/blueprints/">Blueprints</a></strong> implementation of the abstract model.</p>
+</section>
+<section class="slide level2">
+
+<p>Apart from the set of interfaces developed as the <strong>first layer</strong> for the <em>domain model</em> there’s an <strong>extra layer</strong> that uses <em>Blueprints</em>. This way we’re going one step further for making the domain model <strong>independent</strong> from the choice of <em>database technology</em></p>
+</section>
+<section class="slide level2">
+
+<h3 id="technology-specific">technology-specific</h3>
+<p>Optimizations, features, etc.</p>
 <ul>
-<li><strong>local</strong> indexes</li>
+<li><strong><a href="https://github.com/neo4j/neo4j">Neo4j</a></strong></li>
+<li><strong><a href="https://github.com/thinkaurelius/titan/">Titan</a></strong> (WIP)</li>
+<li><strong><a href="https://github.com/orientechnologies/orientdb/">OrientDB</a></strong> (planned)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="why-neo4j">why Neo4j</h3>
+<ul class="incremental">
+<li>wide <strong>adoption</strong></li>
+<li>stable</li>
+<li><strong>Cypher</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="why-titan">why Titan</h3>
+<ul class="incremental">
+<li><strong>local!</strong> indexes</li>
+<li><strong>on-disk</strong> access</li>
 <li><strong>type</strong> definitions -&gt; <em>constraints!</em></li>
 </ul>
 </section>
