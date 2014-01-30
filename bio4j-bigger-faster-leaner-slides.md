@@ -23,13 +23,21 @@
       - era7 and oh no sequences!
       - team
 -->
+
+<br/>
+<br/>
+
 ### _what_ is Bio4j
+
+----
+
+### in one sentence
 
 **Bio4j** is a bioinformatics _graph_-based data platform **integrating** most data available in the most representative **open data sources** around **protein information** available today.
 
 ----
 
-More specifically:
+### data
 
 * *[UniProt KB](http://www.uniprot.org/help/uniprotkb)* (SwissProt + Trembl)
 * *[Gene Ontology](http://www.geneontology.org/)* (GO) 
@@ -39,13 +47,14 @@ More specifically:
 * *[Expasy Enzyme DB](http://enzyme.expasy.org/)*
 
 <!-- 4 or more '-' create a new slide -->
+
 ----
 
-## open!
+### open!
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
-- **implementation** and **release** process is 100% public and totally **transparent**
+- **implementation & release** process is 100% public and totally **transparent**
 
 ----
 
