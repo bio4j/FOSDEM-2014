@@ -2,8 +2,6 @@
 % [Pablo Pareja](http://twitter.com/pablopareja)
 % [**GraphDevRoom 2014**](http://graphdevroom.org)
 
-----
-
 <!-- 
   Sections
 
@@ -13,9 +11,10 @@
       - why graph DBs
       - why cloud
   - details?
+      - data
       - model
       - technologies
-      - other stuff
+      - other stuff -> dev etc
   - how Bio4j
       - use cases
       - case studies
@@ -25,9 +24,12 @@
       - team
 -->
 
-## what is Bio4j
+<br/>
+<br/>
 
-Sort of short abstract of the project
+### _what_ is Bio4j
+
+short abstract of the project
 
 <!-- 4 or more '-' create a new slide -->
 ----
@@ -39,29 +41,47 @@ Sort of short abstract of the project
 
 ----
 
+<br/>
+<br/>
+
+### _why_ Bio4j?
+
+bio data + graph databases + the cloud
+
+----
+
 ### biology & DBs today
 
-* Problems with technology choices (RDB and so on)
+* Problems with technology choices (RDBs and so on)
+
+----
+
+### why graphs
+
 * Biology is a graph and all that blablabla
 
 ----
 
-### data sources - modules
+### the property graph model
 
-<!-- 
-  the '>' symbol here is for showing items incrementally 
--->
-> * Gene Ontology (GO)
-> * ExPASy Enzyme DB
-> * RefSeq
+* Simple explanation with a couple of samples
 
 ----
 
-### data sources - modules
+### why graph databases
 
-> * UniRef --> 50, 90, 100
-> * NCBI taxonomy tree -> GI index
-> * Uniprot KB -> Swissprot/Trembl, interactions...
+* mention here local indexes!
+
+----
+
+### cloud
+
+----
+
+### a bit of history
+
+* How it all started (Gene Ontology & BG7)
+* How it became the BigData platform it is today
 
 ----
 
@@ -82,22 +102,36 @@ Sort of short abstract of the project
 
 ----
 
-### a bit of history
+<br/>
+<br/>
 
-* How it all started (Gene Ontology & BG7)
-* How it became the BigData platform it is today
+### _details_ about Bio4j
 
-----
+data, model, technologies, APIs...
 
-### the property graph model
+---- 
 
-* Simple explanation with a couple of samples
-
-----
+<!-- Details about Bio4j -->
 
 ### Bio4j structure
 
 Modules and relationship among them
+
+----
+
+### data sources - modules I
+
+> * Gene Ontology (GO)
+> * ExPASy Enzyme DB
+> * RefSeq
+
+----
+
+### data sources - modules II
+
+> * UniRef --> 50, 90, 100
+> * NCBI taxonomy tree -> GI index
+> * Uniprot KB -> Swissprot/Trembl, interactions...
 
 ----
 
@@ -174,7 +208,7 @@ Optimizations, features, etc.
 
 ----
 
-#### Bio4j and the cloud
+### Bio4j and the cloud
 
 * Interoperability and data distribution
 * Backup and storage
@@ -200,7 +234,21 @@ Optimizations, features, etc.
 
 ----
 
+<br/>
+<br/>
+
+<!-- How Bio4j -->
+### _how_ to use Bio4j?
+
+use cases, case studies, community
+
+----
+
 ### use cases
+
+----
+
+### case study I
 
 Our tools
 
@@ -210,13 +258,13 @@ Our tools
 
 ----
 
-### use cases
+### case study II
 
 * **Ohio State University** explain, explain
 
 ----
 
-### use cases
+### case study III
 
 * **Berkeley** explain, explain
 
@@ -228,6 +276,16 @@ Our tools
 * **[bio4j](https://github.com/bio4j)** github org
 * **[bio4j-user](http://groups.google.com/group/bio4j-user)** google group
 * **[bio4j](http://www.linkedin.com/groups/Bio4j-3890937)** linkedin
+
+----
+
+<br/>
+<br/>
+
+<!-- How Bio4j -->
+### _who_'s doing Bio4j?
+
+money, team
 
 ----
 
