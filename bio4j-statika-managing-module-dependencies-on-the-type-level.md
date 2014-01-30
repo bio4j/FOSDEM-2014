@@ -49,7 +49,7 @@ Bio4j bioinformatics graph database is modular and customizable, allowing you to
 
 ### Statika as a universal module system
 
-Scala type system
+Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [statika](https://github.com/ohnosequences/statika)
 
 - Modules represented as Scala types
 - Called "Bundles" and can depend on each other
@@ -68,9 +68,9 @@ Scala type system
 
 ### Statika as a package manager
 
-SBT — Simple Build Tool
+[SBT](http://www.scala-sbt.org/) (Simple Build Tool) + [sbt-statika plugin](https://github.com/ohnosequences/sbt-statika)
 
-- Bundles packed and released as artifacts
+- Bundles packed and released as versioned artifacts (jars)
 - SBT tracks dependencies on the artifact level
 - Statika provides an SBT-plugin for a standardized release process
 
@@ -80,11 +80,11 @@ SBT — Simple Build Tool
 
 ### Statika as a deployment tool
 
-AWS — Amazon Web Services
+[AWS](http://aws.amazon.com/) (Amazon Web Services) + [aws-statika lib](https://github.com/ohnosequences/aws-statika)
 
 - To "apply" a bundle — to deploy it to an EC2 instance
-- Statika distributions — a nice way of doing it
-- Statika as configuration system
+- Statika distributions — an abstraction for the cloud infrastructure specifics
+- Statika as a configuration system
 
 <!-- needs to be structured better -->
 
@@ -92,7 +92,7 @@ AWS — Amazon Web Services
 
 ## Bio4j + Statika
 
-<!-- the main part, so should the previous introductory parts shouldn't be too long -->
+<!-- the main part, so the previous introductory parts shouldn't be too long -->
 
 ----
 
