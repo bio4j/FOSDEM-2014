@@ -158,15 +158,19 @@ Optimizations, features, etc.
 
 ----
 
-### github?
+### dev and release process
 
-Using **github** together with Bio4j & SBT ? 
+* coordinate **data** and **code**
+* **[Semantic Versioning](http://semver.org/spec/v2.0.0.html)**
+* **Cloud** integration, distribution, deployment, ...
 
 ----
 
-### dev and release process
+### how?
 
-* Mention Statika??
+- **[Statika](http://ohnosequences/statika)** cloud, data + code, modules (see [next talk](https://fosdem.org/2014/schedule/event/graphdevroom_bio4j_1/))
+- **[sbt](https://github.com/sbt/sbt)** build Java + Scala, automated Bio4j-specific test & release
+- **[git + github](https://github.com/bio4j)** versioning, docs, collaboration, coordination
 
 ----
 
