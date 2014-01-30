@@ -177,11 +177,11 @@ From the beginnings to the BigData platform it is today
 
 ###  numbers
 
-* $~ 10^9$ edges
-* $~ 2 \times 10^8$ nodes
-* $~ 6 \times 10^8$ properties
-* $~ 150$ edge types
-* $~ 40$ node types
+* $10^9$ edges
+* $2 \times 10^8$ nodes
+* $6 \times 10^8$ properties
+* $150$ edge types
+* $40$ node types
 
 <!-- * **`1,216,993,547`** relationships
 * `190,625,351` nodes
@@ -242,17 +242,11 @@ Diagram (maybe also Bio4jExplorer??)
 
 ----
 
-**Key advantage** 
+### Key advantage
 
 _Different_ **graph topologies** at the storage level, _same_ **domain model**. 
 
 Example: use **type nodes** in _Titan_, **labels** in _Neo4j_.
-
-----
-
-### the property graph model
-
-* Simple explanation with a couple of samples
 
 ----
 
