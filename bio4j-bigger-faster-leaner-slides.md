@@ -89,9 +89,28 @@ That might be OK for simple scenarios but as the amount and diversity of data gr
 
 -----
 
-![](GOdomainModel.jpg)
+![**Doesn't look very compelling right?**](GOdomainModel.jpg)
 
 ----
+
+### why graphs
+
+With a relational paradigm the double implication
+
+Entity <--> Table
+
+does not go both ways
+
+----
+ 
+And this implies:
+
+* **_Auxiliary_ tables**
+* _Artificial_ IDs
+* Dealing with _raw_ tables (in spite of Entity-relationship diagrams)
+* Integrating new knowledge becomes difficult
+
+-----
 
 * Problems with technology choices (RDBs and so on)
 * Biology is a graph and all that blablabla
