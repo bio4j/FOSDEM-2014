@@ -6,7 +6,9 @@
 
 ## what is Bio4j
 
-Sort of short abstract of the project
+Bio4j is a bioinformatics graph based database including most data available in [UniProt KB](http://www.uniprot.org/help/uniprotkb) (SwissProt + Trembl), [Gene Ontology](http://www.geneontology.org/) (GO), [UniRef](http://www.uniprot.org/help/uniref) (50,90,100), [RefSeq](http://www.ncbi.nlm.nih.gov/RefSeq/), [NCBI taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/), and [Expasy Enzyme DB](http://enzyme.expasy.org/).
+
+
 
 <!-- 4 or more '-' create a new slide -->
 ----
@@ -15,10 +17,24 @@ Sort of short abstract of the project
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
+- implementation/releasing process is 100% public and totally transparent
 
 ----
 
 ### biology & DBs today
+
+* Highly interconnected overlapping knowledge spread through different databases
+
+![](overlappingDBsBiology.jpg)
+
+----
+
+* However in most cases all data is modeled in Relational Databases or sometimes even just as plain CSV files.
+* That might be OK for simple scenarios but as the amount and diversity of data grows, domain models become crazily complicated!
+
+![](goDomainModel.jpg)
+
+----
 
 * Problems with technology choices (RDB and so on)
 * Biology is a graph and all that blablabla
@@ -158,15 +174,19 @@ Optimizations, features, etc.
 
 ----
 
-### github?
+### dev and release process
 
-Using **github** together with Bio4j & SBT ? 
+* coordinate **data** and **code**
+* **[Semantic Versioning](http://semver.org/spec/v2.0.0.html)**
+* **Cloud** integration, distribution, deployment, ...
 
 ----
 
-### dev and release process
+### how?
 
-* Mention Statika??
+- **[Statika](http://ohnosequences/statika)** cloud, data + code, modules (see [next talk](https://fosdem.org/2014/schedule/event/graphdevroom_bio4j_1/))
+- **[sbt](https://github.com/sbt/sbt)** build Java + Scala, automated Bio4j-specific test & release
+- **[git + github](https://github.com/bio4j)** versioning, docs, collaboration, coordination
 
 ----
 
