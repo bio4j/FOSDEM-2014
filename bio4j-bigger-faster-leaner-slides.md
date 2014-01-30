@@ -334,19 +334,24 @@ use cases, case studies, community
 
 * **[bg7](http://bg7.ohnosequences.com)** genome annotation
 * **mg7** metagenomics analysis
-* comparative genomics, network analysis, ...
+* comparative genomics, network analysis, genome assembly, ...
 
 ----
 
 ### case study II
 
-* **Ohio State University** explain, explain
+**Ohio State University**
+
+ * **Integration** and **analysis** of Chip-seq data
+ * **Modeling** genomic information and **gene regulatory networks**
 
 ----
 
 ### case study III
 
-* **Berkeley** explain, explain
+**Berkeley Phylogenomics Group**
+
+* Graph database for _Big Data challenges_ in **genomics** developed **on top of Bio4j**
 
 ----
 
