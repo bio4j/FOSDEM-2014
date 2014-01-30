@@ -6,7 +6,7 @@
 
 ## what is Bio4j
 
-Sort of short abstract of the project
+Bio4j is a bioinformatics graph based database including most data available in [UniProt KB](http://www.uniprot.org/help/uniprotkb) (SwissProt + Trembl), [Gene Ontology](http://www.geneontology.org/) (GO), [UniRef](http://www.uniprot.org/help/uniref) (50,90,100), [RefSeq](http://www.ncbi.nlm.nih.gov/RefSeq/), [NCBI taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/), and [Expasy Enzyme DB](http://enzyme.expasy.org/).
 
 <!-- 4 or more '-' create a new slide -->
 ----
