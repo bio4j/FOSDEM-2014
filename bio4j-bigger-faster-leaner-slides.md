@@ -23,6 +23,10 @@ Bio4j is a bioinformatics graph based database including most data available in 
 
 ### biology & DBs today
 
+* Highly interconnected overlapping knowledge spread through different databases
+
+![](overlappingDBsBiology.jpg)
+
 * Problems with technology choices (RDB and so on)
 * Biology is a graph and all that blablabla
 
