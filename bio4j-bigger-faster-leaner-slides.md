@@ -1,60 +1,151 @@
 % Bio4j
-% [Pablo Pareja](http://twitter.com/pablopareja)
-% GraphDevRoom 2014
+% **[Pablo Pareja](http://twitter.com/pablopareja)**
+% [**GraphDevRoom 2014**](http://graphdevroom.org)
+
+<!-- 
+  Sections
+
+  - what is Bio4j
+  - why Bio4j
+      - why graphs bio stuff
+      - why graph DBs
+      - why cloud
+  - details?
+      - data
+      - model
+      - technologies
+      - other stuff -> dev etc
+  - how Bio4j
+      - use cases
+      - case studies
+      - contact/support/dev/whatever
+  - who Bio4j
+      - era7 and oh no sequences!
+      - team
+-->
+
+<br/>
+<br/>
+
+### _what_ is Bio4j
 
 ----
 
-## what is Bio4j
+### in one sentence
 
-Sort of short abstract of the project
+**Bio4j** is a bioinformatics _graph_-based data platform **integrating** most data available in the most representative **open data sources** around **protein information** available today.
+
+----
+
+### data
+
+* *[UniProt KB](http://www.uniprot.org/help/uniprotkb)* (SwissProt + Trembl)
+* *[Gene Ontology](http://www.geneontology.org/)* (GO) 
+* *[UniRef](http://www.uniprot.org/help/uniref)* (50,90,100)
+* *[RefSeq](http://www.ncbi.nlm.nih.gov/RefSeq/)*
+* *[NCBI taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/)*
+* *[Expasy Enzyme DB](http://enzyme.expasy.org/)*
 
 <!-- 4 or more '-' create a new slide -->
+
 ----
 
-### open source
+### open!
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
+- **implementation & release** process is 100% public and totally **transparent**
+
+----
+
+<br/>
+<br/>
+
+### _why_ Bio4j?
+
+bio data + graph databases + the cloud
 
 ----
 
 ### biology & DBs today
 
-* Problems with technology choices (RDB and so on)
+Highly **interconnected** overlapping knowledge **spread** through _different databases_
+
+----
+
+![](overlappingDBsBiology.jpg)
+
+----
+
+### why graphs
+
+In most cases all data is modeled in **Relational** Databases or sometimes even just as plain `CSV` files.
+
+----
+
+### why graphs
+
+That might be OK for simple scenarios but as the **amount** and **diversity** of **data grows**, **domain models** become crazily **complicated**!
+
+----
+
+![_Doesn't look very compelling right? :)_](GOdomainModel.jpg)
+
+----
+
+### why graphs
+
+With a relational paradigm the double implication
+
+**Entity** <--> **Table**
+
+does not go both ways
+
+----
+ 
+And _**this implies**_:
+
+* **Auxiliary tables**
+* **Artificial IDs**
+* Dealing with **raw tables** (in spite of Entity-relationship diagrams)
+* **Integrating** new knowledge becomes **difficult**
+
+----
+
+**Life** in general and **biology** in particular are probably not 100% like a graph...
+
+but one thing's sure, they _**are not a set of tables!**_
+
+----
+
+* Problems with technology choices (RDBs and so on)
 * Biology is a graph and all that blablabla
 
 ----
 
-### data sources - modules
+### why graph databases
 
-<!-- 
-  the '>' symbol here is for showing items incrementally 
--->
-> * Gene Ontology (GO)
-> * ExPASy Enzyme DB
-> * RefSeq
+* mention here local indexes!
 
 ----
 
-### data sources - modules
+### cloud
 
-> * UniRef --> 50, 90, 100
-> * NCBI taxonomy tree -> GI index
-> * Uniprot KB -> Swissprot/Trembl, interactions...
-
-----
-
-###  numbers
-
-**Some numbers**
-
-* `1,216,993,547` relationships
-* `190,625,351` nodes
-* `584,436,429` properties
-* `144` relationship types
-* `42` node types
+* data as a service
+* machine configurations
 
 ----
+
+<br/>
+<br/>
+
+### _details_ about Bio4j
+
+data, model, technologies, APIs...
+
+---- 
+
+<!-- Details about Bio4j -->
 
 ### a bit of history
 
@@ -63,15 +154,41 @@ Sort of short abstract of the project
 
 ----
 
-### the property graph model
+###  numbers
 
-* Simple explanation with a couple of samples
+* $10^9$ edges
+* $2\times 10^8$ nodes
+* $6 \times 10^8$ properties
+* $150$ edge types
+* $40$ node types
 
+<!-- * **`1,216,993,547`** relationships
+* `190,625,351` nodes
+* `584,436,429` properties
+* `144` relationship types
+* `42` node types
+ -->
 ----
 
 ### Bio4j structure
 
 Modules and relationship among them
+
+----
+
+### data sources - modules I
+
+> * Gene Ontology (GO)
+> * ExPASy Enzyme DB
+> * RefSeq
+
+----
+
+### data sources - modules II
+
+> * UniRef -> 50, 90, 100
+> * NCBI taxonomy tree -> GI index
+> * Uniprot KB -> Swissprot/Trembl, interactions...
 
 ----
 
@@ -112,6 +229,12 @@ Example: use **type nodes** in _Titan_, **labels** in _Neo4j_.
 
 ----
 
+### the property graph model
+
+* Simple explanation with a couple of samples
+
+----
+
 ### Blueprints layer
 
 A default **[Blueprints](https://github.com/tinkerpop/blueprints/)** implementation of the abstract model.
@@ -148,7 +271,7 @@ Optimizations, features, etc.
 
 ----
 
-#### Bio4j and the cloud
+### Bio4j and the cloud
 
 * Interoperability and data distribution
 * Backup and storage
@@ -158,35 +281,55 @@ Optimizations, features, etc.
 
 ----
 
-### github?
+### dev and release process
 
-Using **github** together with Bio4j & SBT ? 
+* coordinate **data** and **code**
+* **[Semantic Versioning](http://semver.org/spec/v2.0.0.html)**
+* **Cloud** integration, distribution, deployment, ...
 
 ----
 
-### dev and release process
+### how?
 
-* Mention Statika??
+- **[Statika](http://ohnosequences/statika)** cloud, data + code, modules (see [next talk](https://fosdem.org/2014/schedule/event/graphdevroom_bio4j_1/))
+- **[sbt](https://github.com/sbt/sbt)** build Java + Scala, automated Bio4j-specific test & release
+- **[git + github](https://github.com/bio4j)** versioning, docs, collaboration, coordination
+
+----
+
+<br/>
+<br/>
+
+<!-- How Bio4j -->
+### _how_ to use Bio4j?
+
+use cases, case studies, community
 
 ----
 
 ### use cases
 
-Our tools
+----
+
+### ??? and !!!
+
+----
+
+### how we use it
 
 * **[bg7](http://bg7.ohnosequences.com)** genome annotation
 * **mg7** metagenomics analysis
-* ...
+* comparative genomics, network analysis, ...
 
 ----
 
-### use cases
+### case study II
 
 * **Ohio State University** explain, explain
 
 ----
 
-### use cases
+### case study III
 
 * **Berkeley** explain, explain
 
@@ -201,12 +344,31 @@ Our tools
 
 ----
 
+<br/>
+<br/>
+
+<!-- How Bio4j -->
+### _who_'s doing Bio4j?
+
+research group, team
+
+----
+
+### oh no sequences!
+
+**[Era7 bioinformatics](http://era7bioinformatics.com)** R&D group
+
+- **web** -> [ohnosequences.com](http://ohnosequences.com)
+- **Github** -> [ohnosequences](https://github.com/ohnosequences)
+
+----
+
 ### team
 
 - **[Pablo Pareja](http://ohnosequences.com/ppareja)** <br />
     project leader & main dev
 - **[Eduardo Pareja-Tobes](http://ohnosequences.com/eparejatobes)**<br /> 
-    technology, architecture
+    technology & architecture
 - **[Raquel Tobes](http://ohnosequences.com/rtobes)** <br />
     bio data integration
 
@@ -220,5 +382,3 @@ Our tools
     bio data integration
 - **[Evdokim Kovach](http://ohnosequences.com/ekovach)**<br /> 
     dev
-
-----
