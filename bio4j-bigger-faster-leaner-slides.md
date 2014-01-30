@@ -103,7 +103,7 @@ does not go both ways
 
 ----
  
-And _**this implies**_:
+### _not-so-good_ implications
 
 * **Auxiliary tables**
 * **Artificial IDs**
@@ -112,20 +112,24 @@ And _**this implies**_:
 
 ----
 
+### biology _!=_ table
+
 **Life** in general and **biology** in particular are probably not 100% like a graph...
 
 but one thing's sure, they _**are not a set of tables!**_
 
 ----
 
-* Problems with technology choices (RDBs and so on)
-* Biology is a graph and all that blablabla
+### why graph databases
+
+* **Data** stored in a way that **semantically represents its own structure**
+* Incorporating new data is easy --> **scalability** 
 
 ----
 
 ### why graph databases
 
-* mention here local indexes!
+* **Vertex-centric** _(local)_ indices allow for complex traversals --> overcoming **supernode problem**
 
 ----
 
@@ -147,20 +151,37 @@ data, model, technologies, APIs...
 
 <!-- Details about Bio4j -->
 
-### a bit of history
+<br/>
+<br/>
 
-* How it all started (Gene Ontology & BG7)
-* How it became the BigData platform it is today
+### a bit of _history_
+
+From the beginnings to the BigData platform it is today
+
+----
+
+### How it all started 
+
+* Need for **massive access** to _Gene Ontology_ annotations
+* [**BG7**](http://bg7.ohnosequences.com/) bacterial genome annotation system 
+* Need for massive direct access to **protein information**
+
+----
+
+### more and more data!
+
+* As _other_ data sources were becoming a _bottleneck_ they were being added to Bio4j
+* First it was Uniprot KB, then Uniref and **we didn't stop yet :)**
 
 ----
 
 ###  numbers
 
-* $10^9$ edges
-* $2\times 10^8$ nodes
-* $6 \times 10^8$ properties
-* $150$ edge types
-* $40$ node types
+* $~ 10^9$ edges
+* $~ 2 \times 10^8$ nodes
+* $~ 6 \times 10^8$ properties
+* $~ 150$ edge types
+* $~ 40$ node types
 
 <!-- * **`1,216,993,547`** relationships
 * `190,625,351` nodes

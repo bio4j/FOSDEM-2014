@@ -339,7 +339,7 @@
 </section>
 <section class="slide level2">
 
-<p>And <em><strong>this implies</strong></em>:</p>
+<h3 id="not-so-good-implications"><em>not-so-good</em> implications</h3>
 <ul>
 <li><strong>Auxiliary tables</strong></li>
 <li><strong>Artificial IDs</strong></li>
@@ -349,21 +349,23 @@
 </section>
 <section class="slide level2">
 
+<h3 id="biology-table">biology <em>!=</em> table</h3>
 <p><strong>Life</strong> in general and <strong>biology</strong> in particular are probably not 100% like a graph…</p>
 <p>but one thing’s sure, they <em><strong>are not a set of tables!</strong></em></p>
 </section>
 <section class="slide level2">
 
+<h3 id="why-graph-databases">why graph databases</h3>
 <ul>
-<li>Problems with technology choices (RDBs and so on)</li>
-<li>Biology is a graph and all that blablabla</li>
+<li><strong>Data</strong> stored in a way that <strong>semantically represents its own structure</strong></li>
+<li>Incorporating new data is easy –&gt; <strong>scalability</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="why-graph-databases">why graph databases</h3>
+<h3 id="why-graph-databases-1">why graph databases</h3>
 <ul>
-<li>mention here local indexes!</li>
+<li><strong>Vertex-centric</strong> <em>(local)</em> indices allow for complex traversals –&gt; overcoming <strong>supernode problem</strong></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -384,21 +386,36 @@
 
 <!-- Details about Bio4j -->
 
-<h3 id="a-bit-of-history">a bit of history</h3>
+<p><br/> <br/></p>
+<h3 id="a-bit-of-history">a bit of <em>history</em></h3>
+<p>From the beginnings to the BigData platform it is today</p>
+</section>
+<section class="slide level2">
+
+<h3 id="how-it-all-started">How it all started</h3>
 <ul>
-<li>How it all started (Gene Ontology &amp; BG7)</li>
-<li>How it became the BigData platform it is today</li>
+<li>Need for <strong>massive access</strong> to <em>Gene Ontology</em> annotations</li>
+<li><a href="http://bg7.ohnosequences.com/"><strong>BG7</strong></a> bacterial genome annotation system</li>
+<li>Need for massive direct access to <strong>protein information</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="more-and-more-data">more and more data!</h3>
+<ul>
+<li>As <em>other</em> data sources were becoming a <em>bottleneck</em> they were being added to Bio4j</li>
+<li>First it was Uniprot KB, then Uniref and <strong>we didn’t stop yet :)</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <h3 id="numbers">numbers</h3>
 <ul>
-<li><span class="math">10<sup>9</sup></span> edges</li>
-<li><span class="math">2 × 10<sup>8</sup></span> nodes</li>
-<li><span class="math">6 × 10<sup>8</sup></span> properties</li>
-<li><span class="math">150</span> edge types</li>
-<li><span class="math">40</span> node types</li>
+<li><span class="math"> 10<sup>9</sup></span> edges</li>
+<li><span class="math"> 2 × 10<sup>8</sup></span> nodes</li>
+<li><span class="math"> 6 × 10<sup>8</sup></span> properties</li>
+<li><span class="math"> 150</span> edge types</li>
+<li><span class="math"> 40</span> node types</li>
 </ul>
 <!-- * **`1,216,993,547`** relationships
 * `190,625,351` nodes
