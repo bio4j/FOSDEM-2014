@@ -1,8 +1,29 @@
 % Bio4j
 % [Pablo Pareja](http://twitter.com/pablopareja)
-% GraphDevRoom 2014
+% [**GraphDevRoom 2014**](http://graphdevroom.org)
 
 ----
+
+<!-- 
+  Sections
+
+  - what is Bio4j
+  - why Bio4j
+      - why graphs bio stuff
+      - why graph DBs
+      - why cloud
+  - details?
+      - model
+      - technologies
+      - other stuff
+  - how Bio4j
+      - use cases
+      - case studies
+      - contact/support/dev/whatever
+  - who Bio4j
+      - era7 and oh no sequences!
+      - team
+-->
 
 ## what is Bio4j
 
@@ -46,9 +67,14 @@ Sort of short abstract of the project
 
 ###  numbers
 
-**Some numbers**
-
-* `1,216,993,547` relationships
+<!-- 
+  10^9 rels
+  2*10^8 nodes
+  6*10^8 properties
+  150 rel types
+  40 node types
+ -->
+* **`1,216,993,547`** relationships
 * `190,625,351` nodes
 * `584,436,429` properties
 * `144` relationship types
