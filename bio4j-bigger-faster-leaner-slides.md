@@ -31,6 +31,8 @@
 
 short abstract of the project
 
+
+
 <!-- 4 or more '-' create a new slide -->
 ----
 
@@ -42,6 +44,7 @@ short abstract of the project
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
+- implementation and release process is 100% public and totally transparent
 
 ----
 
@@ -56,12 +59,31 @@ bio data + graph databases + the cloud
 
 ### biology & DBs today
 
-* Problems with technology choices (RDBs and so on)
+Highly **interconnected** overlapping knowledge **spread** through _different databases_
+
+----
+
+![](overlappingDBsBiology.jpg)
 
 ----
 
 ### why graphs
 
+In most cases all data is modeled in **Relational** Databases or sometimes even just as plain `CSV` files.
+
+----
+
+### why graphs
+
+That might be OK for simple scenarios but as the amount and diversity of data grows, domain models become crazily complicated!
+
+-----
+
+![](GOdomainModel.jpg)
+
+----
+
+* Problems with technology choices (RDBs and so on)
 * Biology is a graph and all that blablabla
 
 ----
