@@ -85,11 +85,11 @@ In most cases all data is modeled in **Relational** Databases or sometimes even 
 
 ### why graphs
 
-That might be OK for simple scenarios but as the amount and diversity of data grows, domain models become crazily complicated!
+That might be OK for simple scenarios but as the **amount** and **diversity** of **data grows**, **domain models** become crazily **complicated**!
 
------
+----
 
-![**Doesn't look very compelling right?**](GOdomainModel.jpg)
+![_Doesn't look very compelling right? :)_](GOdomainModel.jpg)
 
 ----
 
@@ -97,20 +97,26 @@ That might be OK for simple scenarios but as the amount and diversity of data gr
 
 With a relational paradigm the double implication
 
-Entity <--> Table
+**Entity** <--> **Table**
 
 does not go both ways
 
 ----
  
-And this implies:
+And _**this implies**_:
 
-* **_Auxiliary_ tables**
-* _Artificial_ IDs
-* Dealing with _raw_ tables (in spite of Entity-relationship diagrams)
-* Integrating new knowledge becomes difficult
+* **Auxiliary tables**
+* **Artificial IDs**
+* Dealing with **raw tables** (in spite of Entity-relationship diagrams)
+* **Integrating** new knowledge becomes **difficult**
 
------
+----
+
+**Life** in general and **biology** in particular are probably not 100% like a graph...
+
+but one thing's sure, they _**are not a set of tables!**_
+
+----
 
 * Problems with technology choices (RDBs and so on)
 * Biology is a graph and all that blablabla
