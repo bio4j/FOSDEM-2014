@@ -27,6 +27,15 @@ Bio4j is a bioinformatics graph based database including most data available in 
 
 ![](overlappingDBsBiology.jpg)
 
+----
+
+* However in most cases all data is modeled in Relational Databases or sometimes even just as plain CSV files.
+* That might be OK for simple scenarios but as the amount and diversity of data grows, domain models become crazily complicated!
+
+![](goDomainModel.jpg)
+
+----
+
 * Problems with technology choices (RDB and so on)
 * Biology is a graph and all that blablabla
 
