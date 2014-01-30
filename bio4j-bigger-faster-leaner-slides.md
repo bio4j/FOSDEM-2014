@@ -23,28 +23,29 @@
       - era7 and oh no sequences!
       - team
 -->
-
-<br/>
-<br/>
-
 ### _what_ is Bio4j
 
-short abstract of the project
+**Bio4j** is a bioinformatics _graph_-based data platform **integrating** most data available in the most representative **open data sources** around **protein information** available today.
 
-
-
-<!-- 4 or more '-' create a new slide -->
 ----
 
-**Bio4j** is a bioinformatics _graph_-based data platform **integrating** most data available in *[UniProt KB](http://www.uniprot.org/help/uniprotkb)* (SwissProt + Trembl), *[Gene Ontology](http://www.geneontology.org/)* (GO), *[UniRef](http://www.uniprot.org/help/uniref)* (50,90,100), *[RefSeq](http://www.ncbi.nlm.nih.gov/RefSeq/)*, *[NCBI taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/)*, and *[Expasy Enzyme DB](http://enzyme.expasy.org/)*
+More specifically:
 
+* *[UniProt KB](http://www.uniprot.org/help/uniprotkb)* (SwissProt + Trembl)
+* *[Gene Ontology](http://www.geneontology.org/)* (GO) 
+* *[UniRef](http://www.uniprot.org/help/uniref)* (50,90,100)
+* *[RefSeq](http://www.ncbi.nlm.nih.gov/RefSeq/)*
+* *[NCBI taxonomy](http://www.ncbi.nlm.nih.gov/Taxonomy/)*
+* *[Expasy Enzyme DB](http://enzyme.expasy.org/)*
+
+<!-- 4 or more '-' create a new slide -->
 ----
 
 ## open!
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
-- implementation and release process is 100% public and totally transparent
+- **implementation** and **release** process is 100% public and totally **transparent**
 
 ----
 
