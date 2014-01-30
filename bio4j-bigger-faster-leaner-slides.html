@@ -55,7 +55,8 @@
     font-family: Bitter;
     font-weight: bold; 
     font-style: italic;
-    color: #b8913d;
+    /*color: #b8913d;*/
+    color: #b8463d;
     padding: 0.6666em 0;
     padding-bottom: 0;
   }
@@ -220,7 +221,7 @@
 <body>
 <section>
   <h1 class="title">Bio4j</h1>
-  <h2 class="author"><a href="http://twitter.com/pablopareja">Pablo Pareja</a></h2>
+  <h2 class="author"><strong><a href="http://twitter.com/pablopareja">Pablo Pareja</a></strong></h2>
   <h3 class="date"><a href="http://graphdevroom.org"><strong>GraphDevRoom 2014</strong></a></h3>
 </section>
 <div id="logos_div">
@@ -271,7 +272,11 @@
 </section>
 <section id="section" class="slide level2">
 <h1><!-- 4 or more '-' create a new slide --></h1>
-<h3 id="open-source">open source</h3>
+<h3 id="in-one-long-sentence">in one (long) sentence</h3>
+<p><strong>Bio4j</strong> is blahblah with bluh and also oh yeah</p>
+</section>
+<section id="open" class="slide level2">
+<h1>open!</h1>
 <ul>
 <li><strong>code</strong> <strong><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a></strong></li>
 <li><strong>data</strong> integrates only <strong><a href="http://okfn.org/opendata/">open data</a></strong></li>
@@ -299,13 +304,6 @@
 </section>
 <section class="slide level2">
 
-<h3 id="the-property-graph-model">the property graph model</h3>
-<ul>
-<li>Simple explanation with a couple of samples</li>
-</ul>
-</section>
-<section class="slide level2">
-
 <h3 id="why-graph-databases">why graph databases</h3>
 <ul>
 <li>mention here local indexes!</li>
@@ -314,31 +312,9 @@
 <section class="slide level2">
 
 <h3 id="cloud">cloud</h3>
-</section>
-<section class="slide level2">
-
-<h3 id="a-bit-of-history">a bit of history</h3>
 <ul>
-<li>How it all started (Gene Ontology &amp; BG7)</li>
-<li>How it became the BigData platform it is today</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="numbers">numbers</h3>
-<!-- 
-  10^9 rels
-  2*10^8 nodes
-  6*10^8 properties
-  150 rel types
-  40 node types
- -->
-<ul>
-<li><strong><code>1,216,993,547</code></strong> relationships</li>
-<li><code>190,625,351</code> nodes</li>
-<li><code>584,436,429</code> properties</li>
-<li><code>144</code> relationship types</li>
-<li><code>42</code> node types</li>
+<li>data as a service</li>
+<li>machine configurations</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -350,6 +326,31 @@
 <section class="slide level2">
 
 <!-- Details about Bio4j -->
+
+<h3 id="a-bit-of-history">a bit of history</h3>
+<ul>
+<li>How it all started (Gene Ontology &amp; BG7)</li>
+<li>How it became the BigData platform it is today</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="numbers">numbers</h3>
+<ul>
+<li><span class="math">10<sup>9</sup></span> edges</li>
+<li><span class="math">2 × 10<sup>8</sup></span> nodes</li>
+<li><span class="math">6 × 10<sup>8</sup></span> properties</li>
+<li><span class="math">150</span> edge types</li>
+<li><span class="math">40</span> node types</li>
+</ul>
+<!-- * **`1,216,993,547`** relationships
+* `190,625,351` nodes
+* `584,436,429` properties
+* `144` relationship types
+* `42` node types
+ -->
+</section>
+<section class="slide level2">
 
 <h3 id="bio4j-structure">Bio4j structure</h3>
 <p>Modules and relationship among them</p>
@@ -367,7 +368,7 @@
 
 <h3 id="data-sources---modules-ii">data sources - modules II</h3>
 <ul class="incremental">
-<li>UniRef –&gt; 50, 90, 100</li>
+<li>UniRef -&gt; 50, 90, 100</li>
 <li>NCBI taxonomy tree -&gt; GI index</li>
 <li>Uniprot KB -&gt; Swissprot/Trembl, interactions…</li>
 </ul>
@@ -409,6 +410,13 @@
 <p><strong>Key advantage</strong></p>
 <p><em>Different</em> <strong>graph topologies</strong> at the storage level, <em>same</em> <strong>domain model</strong>.</p>
 <p>Example: use <strong>type nodes</strong> in <em>Titan</em>, <strong>labels</strong> in <em>Neo4j</em>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="the-property-graph-model">the property graph model</h3>
+<ul>
+<li>Simple explanation with a couple of samples</li>
+</ul>
 </section>
 <section class="slide level2">
 
@@ -489,12 +497,15 @@
 </section>
 <section class="slide level2">
 
-<h3 id="case-study-i">case study I</h3>
-<p>Our tools</p>
+<h3 id="and">??? and !!!</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="how-we-use-it">how we use it</h3>
 <ul>
 <li><strong><a href="http://bg7.ohnosequences.com">bg7</a></strong> genome annotation</li>
 <li><strong>mg7</strong> metagenomics analysis</li>
-<li>…</li>
+<li>comparative genomics, network analysis, …</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -526,14 +537,23 @@
 <p><br/> <br/></p>
 <!-- How Bio4j -->
 <h3 id="whos-doing-bio4j"><em>who</em>’s doing Bio4j?</h3>
-<p>money, team</p>
+<p>research group, team</p>
+</section>
+<section class="slide level2">
+
+<h3 id="oh-no-sequences">oh no sequences!</h3>
+<p><strong><a href="http://era7bioinformatics.com">Era7 bioinformatics</a></strong> R&amp;D group</p>
+<ul>
+<li><strong>web</strong> -&gt; <a href="http://ohnosequences.com">ohnosequences.com</a></li>
+<li><strong>Github</strong> -&gt; <a href="https://github.com/ohnosequences">ohnosequences</a></li>
+</ul>
 </section>
 <section class="slide level2">
 
 <h3 id="team">team</h3>
 <ul>
 <li><strong><a href="http://ohnosequences.com/ppareja">Pablo Pareja</a></strong> <br /> project leader &amp; main dev</li>
-<li><strong><a href="http://ohnosequences.com/eparejatobes">Eduardo Pareja-Tobes</a></strong><br /> technology, architecture</li>
+<li><strong><a href="http://ohnosequences.com/eparejatobes">Eduardo Pareja-Tobes</a></strong><br /> technology &amp; architecture</li>
 <li><strong><a href="http://ohnosequences.com/rtobes">Raquel Tobes</a></strong> <br /> bio data integration</li>
 </ul>
 </section>
@@ -545,9 +565,6 @@
 <li><strong><a href="http://ohnosequences.com/mmanrique">Marina Manrique</a></strong> <br /> bio data integration</li>
 <li><strong><a href="http://ohnosequences.com/ekovach">Evdokim Kovach</a></strong><br /> dev</li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section>
 <!-- {{{{ dzslides core
 #

@@ -1,5 +1,5 @@
 % Bio4j
-% [Pablo Pareja](http://twitter.com/pablopareja)
+% **[Pablo Pareja](http://twitter.com/pablopareja)**
 % [**GraphDevRoom 2014**](http://graphdevroom.org)
 
 <!-- 
@@ -34,7 +34,13 @@ short abstract of the project
 <!-- 4 or more '-' create a new slide -->
 ----
 
-### open source
+### in one (long) sentence
+
+**Bio4j** is blahblah with bluh and also oh yeah
+
+----
+
+## open!
 
 - **code** **[AGPLv3](https://www.gnu.org/licenses/agpl-3.0.html)**
 - **data** integrates only **[open data](http://okfn.org/opendata/)**
@@ -62,12 +68,6 @@ bio data + graph databases + the cloud
 
 ----
 
-### the property graph model
-
-* Simple explanation with a couple of samples
-
-----
-
 ### why graph databases
 
 * mention here local indexes!
@@ -76,29 +76,8 @@ bio data + graph databases + the cloud
 
 ### cloud
 
-----
-
-### a bit of history
-
-* How it all started (Gene Ontology & BG7)
-* How it became the BigData platform it is today
-
-----
-
-###  numbers
-
-<!-- 
-  10^9 rels
-  2*10^8 nodes
-  6*10^8 properties
-  150 rel types
-  40 node types
- -->
-* **`1,216,993,547`** relationships
-* `190,625,351` nodes
-* `584,436,429` properties
-* `144` relationship types
-* `42` node types
+* data as a service
+* machine configurations
 
 ----
 
@@ -112,6 +91,29 @@ data, model, technologies, APIs...
 ---- 
 
 <!-- Details about Bio4j -->
+
+### a bit of history
+
+* How it all started (Gene Ontology & BG7)
+* How it became the BigData platform it is today
+
+----
+
+###  numbers
+
+* $10^9$ edges
+* $2\times 10^8$ nodes
+* $6 \times 10^8$ properties
+* $150$ edge types
+* $40$ node types
+
+<!-- * **`1,216,993,547`** relationships
+* `190,625,351` nodes
+* `584,436,429` properties
+* `144` relationship types
+* `42` node types
+ -->
+----
 
 ### Bio4j structure
 
@@ -129,7 +131,7 @@ Modules and relationship among them
 
 ### data sources - modules II
 
-> * UniRef --> 50, 90, 100
+> * UniRef -> 50, 90, 100
 > * NCBI taxonomy tree -> GI index
 > * Uniprot KB -> Swissprot/Trembl, interactions...
 
@@ -169,6 +171,12 @@ Diagram (maybe also Bio4jExplorer??)
 _Different_ **graph topologies** at the storage level, _same_ **domain model**. 
 
 Example: use **type nodes** in _Titan_, **labels** in _Neo4j_.
+
+----
+
+### the property graph model
+
+* Simple explanation with a couple of samples
 
 ----
 
@@ -248,13 +256,15 @@ use cases, case studies, community
 
 ----
 
-### case study I
+### ??? and !!!
 
-Our tools
+----
+
+### how we use it
 
 * **[bg7](http://bg7.ohnosequences.com)** genome annotation
 * **mg7** metagenomics analysis
-* ...
+* comparative genomics, network analysis, ...
 
 ----
 
@@ -285,7 +295,16 @@ Our tools
 <!-- How Bio4j -->
 ### _who_'s doing Bio4j?
 
-money, team
+research group, team
+
+----
+
+### oh no sequences!
+
+**[Era7 bioinformatics](http://era7bioinformatics.com)** R&D group
+
+- **web** -> [ohnosequences.com](http://ohnosequences.com)
+- **Github** -> [ohnosequences](https://github.com/ohnosequences)
 
 ----
 
@@ -294,7 +313,7 @@ money, team
 - **[Pablo Pareja](http://ohnosequences.com/ppareja)** <br />
     project leader & main dev
 - **[Eduardo Pareja-Tobes](http://ohnosequences.com/eparejatobes)**<br /> 
-    technology, architecture
+    technology & architecture
 - **[Raquel Tobes](http://ohnosequences.com/rtobes)** <br />
     bio data integration
 
@@ -308,5 +327,3 @@ money, team
     bio data integration
 - **[Evdokim Kovach](http://ohnosequences.com/ekovach)**<br /> 
     dev
-
-----
