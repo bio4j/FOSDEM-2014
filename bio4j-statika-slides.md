@@ -20,25 +20,34 @@ Bio4j bioinformatics graph database is modular and customizable, allowing you to
 
 ----
 
-### Bio4j modules
+![](overlappingDBsBiology.jpg)
 
-- some diagram of dependencies (pic)
+<!-- you already saw this diagram and it just shows that 
+Bio4j integrates a lot of data from _different_ sources -->
 
 ----
 
-### Bio4j releases
+![](resources/Bio4jModules.png)\   
 
-- a lot of data in modules => importance of possibility to import only what you need
+<!-- actually it's a bit more involved -->
+
+----
+
+### Custom Bio4j releases
+
+- [NCBI Taxonomy] + [GI index]  
+    for metagenomics tool
+- ??? moar examples ???
+
+<!--
+- a lot of data in modules => 
+  importance of possibility to import only what you really need
 - different releases/distributions/builds
 - may be some examples of interesting/useful/non-obvious combinations (ask @pablopareja)
-- (?) importance of doing it in the cloud
 - real need of systemized/organized way of managing these modules
 
-<!-- may be should be split on two slides:
 * releases as combinations of modules + example(s)
 * why do we need to do smth with all this (i.e. why statika is needed at all),
-  at the same time without any negative on the current state 
-  (like "everything is cool, but we want to make it awesome (for you, dear user)")
 -->
 
 ----
@@ -47,14 +56,14 @@ Bio4j bioinformatics graph database is modular and customizable, allowing you to
 
 ----
 
-### Statika as a universal module system
+### A module system
 
 Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [statika](https://github.com/ohnosequences/statika)
 
-- Modules represented as Scala types
-- Called "Bundles" and can depend on each other
-- Type-checker validates correctness
-- Statika does linearization of the deps graph
+- modules as Scala types
+- they can depend on each other!
+- it's validated by type-checker
+- statika does linearization of the deps graph
 
 <!-- keywords: 
 * mention install method and installing with deps in the right order
@@ -66,7 +75,7 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 ----
 
-### Statika as a package manager
+### A package manager
 
 [SBT](http://www.scala-sbt.org/) (Simple Build Tool) + [sbt-statika plugin](https://github.com/ohnosequences/sbt-statika)
 
@@ -78,7 +87,7 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 ----
 
-### Statika as a deployment tool
+### A deployment tool
 
 [AWS](http://aws.amazon.com/) (Amazon Web Services) + [aws-statika lib](https://github.com/ohnosequences/aws-statika)
 
@@ -124,18 +133,19 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 ----
 
-### Releasing and deploying Bio4j
+### Ease of releasing Bio4j
 
-- ease and robustness of releasing (incl. tests) 
-- deployment (thnx to aws-statika part + statika-cli for applying bundles)
+- create a bundle with needed modules
+- be sure not to spend resources on a wrong configuration
+- use tools for easy deployment: 
+    sbt-statika + statika-cli
 
 ----
 
-### Summary
+### Summary: Bio4j + Statika
 
-- abstract layout of bundles for any Bio4j module
-- a set of concrete modules, which conform to this layout
-- dependencies between modules
-- tracking dependencies on all levels
-- in the end we want just to do things in the right order
-- and do the real work, using cloud ifrastructure
+- _abstract_ layout of bundles <!-- for any Bio4j module -->
+- a set of _concrete_ modules <!-- which conform to this layout and have their own deps -->
+- tracking dependencies on _all levels_ <!-- "automatically" on all levels -->
+- linearizing them _automatically_ <!-- we just want to do things in the right order -->
+- using the _cloud_ infrastructure <!-- for doing actual work -->
