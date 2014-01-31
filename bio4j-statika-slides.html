@@ -107,10 +107,10 @@
     margin-left: -80px;
     margin-top: -120px;
     position:absolute;
-    width: 800px;
-    height: 600px;
-    top: 0;
-    left: 0;
+    /*width: 800px;*/
+    /*height: 600px;*/
+    /*top: 0;*/
+    /*left: 0;*/
     z-index: -1;
   }
   figure > img {
@@ -282,10 +282,10 @@ Bio4j integrates a lot of data from _different_ sources -->
 <h3 id="a-module-system">A module system</h3>
 <p>Scala type system: <a href="https://github.com/milessabin/shapeless">shapeless</a> + <a href="https://github.com/ohnosequences/statika">statika</a></p>
 <ul>
-<li>modules as Scala types</li>
-<li>they can depend on each other!</li>
-<li>it’s validated by type-checker</li>
-<li>statika does linearization of the deps graph</li>
+<li>Modules as Scala types — Bundles</li>
+<li>They can depend on each other!</li>
+<li>It’s validated by compiler</li>
+<li>Statika does linearization of the deps graph</li>
 </ul>
 <!-- keywords: 
 * mention install method and installing with deps in the right order
@@ -300,18 +300,16 @@ Bio4j integrates a lot of data from _different_ sources -->
 <h3 id="a-package-manager">A package manager</h3>
 <p><a href="http://www.scala-sbt.org/">SBT</a> (Simple Build Tool) + <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika plugin</a></p>
 <ul>
-<li>Bundles packed and released as versioned artifacts (jars)</li>
-<li>SBT tracks dependencies on the artifact level</li>
-<li>Statika provides an SBT-plugin for a standardized release process</li>
+<li>Bundles packed as versioned artifacts (jars)</li>
+<li>Reusing SBT infrastructure <!-- it tracks dependencies on the artifact level --></li>
+<li>sbt-statika plugin for a standardized release process</li>
 </ul>
-<!-- may be it shouldn't be too detailed, a bit offtopic -->
-
 </section><section class="slide level2">
 
 <h3 id="a-deployment-tool">A deployment tool</h3>
 <p><a href="http://aws.amazon.com/">AWS</a> (Amazon Web Services) + <a href="https://github.com/ohnosequences/aws-statika">aws-statika lib</a></p>
 <ul>
-<li>To “apply” a bundle — to deploy it to an EC2 instance</li>
+<li>“Apply” bundle — to deploy it to an EC2 instance</li>
 <li>Statika distributions — an abstraction for the cloud infrastructure specifics</li>
 <li>Statika as a configuration system</li>
 </ul>
@@ -324,14 +322,16 @@ Bio4j integrates a lot of data from _different_ sources -->
 </section><section class="slide level2">
 
 <h3 id="defining-inner-bundles-hierarchy">Defining inner bundles hierarchy</h3>
+<p>What is a module of Bio4j:</p>
 <ul>
-<li>what is a module of Bio4j — viewing it’s inner structure:</li>
-<li>raw data</li>
-<li>database initialization (type definitions etc.)</li>
-<li>importing process</li>
-<li>providing API</li>
-<li>pic of the hierarchy</li>
+<li>Raw data</li>
+<li>Node/relations type defs</li>
+<li>Importing process</li>
+<li>Some API</li>
 </ul>
+</section><section class="slide level2">
+
+<p><img src="resources/Bio4jStatikaBundles.png" /> </p>
 </section><section class="slide level2">
 
 <h3 id="relation-between-modules-on-the-bundles-level">Relation between modules on the bundles level</h3>

@@ -60,10 +60,10 @@ Bio4j integrates a lot of data from _different_ sources -->
 
 Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [statika](https://github.com/ohnosequences/statika)
 
-- modules as Scala types
-- they can depend on each other!
-- it's validated by type-checker
-- statika does linearization of the deps graph
+- Modules as Scala types — Bundles
+- They can depend on each other!
+- It's validated by compiler
+- Statika does linearization of the deps graph
 
 <!-- keywords: 
 * mention install method and installing with deps in the right order
@@ -79,11 +79,9 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 [SBT](http://www.scala-sbt.org/) (Simple Build Tool) + [sbt-statika plugin](https://github.com/ohnosequences/sbt-statika)
 
-- Bundles packed and released as versioned artifacts (jars)
-- SBT tracks dependencies on the artifact level
-- Statika provides an SBT-plugin for a standardized release process
-
-<!-- may be it shouldn't be too detailed, a bit offtopic -->
+- Bundles packed as versioned artifacts (jars)
+- Reusing SBT infrastructure <!-- it tracks dependencies on the artifact level -->
+- sbt-statika plugin for a standardized release process
 
 ----
 
@@ -91,7 +89,7 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 [AWS](http://aws.amazon.com/) (Amazon Web Services) + [aws-statika lib](https://github.com/ohnosequences/aws-statika)
 
-- To "apply" a bundle — to deploy it to an EC2 instance
+- "Apply" bundle — to deploy it to an EC2 instance
 - Statika distributions — an abstraction for the cloud infrastructure specifics
 - Statika as a configuration system
 
@@ -107,12 +105,16 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 ### Defining inner bundles hierarchy
 
-- what is a module of Bio4j — viewing it's inner structure:
-  + raw data
-  + database initialization (type definitions etc.)
-  + importing process
-  + providing API
-- pic of the hierarchy
+What is a module of Bio4j:
+
+- Raw data
+- Node/relations type defs
+- Importing process
+- Some API
+
+----
+
+![](resources/Bio4jStatikaBundles.png)\  
 
 ----
 
