@@ -79,7 +79,7 @@ Highly **interconnected** overlapping knowledge **spread** through _different da
 
 ### why graphs
 
-In most cases all data is modeled in **Relational** Databases or sometimes even just as plain `CSV` files.
+In most cases all data is modeled in _**Relational Databases**_ or sometimes even just as plain _**`CSV` files**_.
 
 ----
 
@@ -193,7 +193,7 @@ From the beginnings to the BigData platform it is today
 
 ### Bio4j structure
 
-Modules and relationship among them
+Bio4j importing process is **modular** and **customizable** allowing you to import just the data you are interested in.
 
 ----
 
@@ -213,6 +213,14 @@ Modules and relationship among them
 
 ----
 
+### data sources - modules III
+
+Just keep in mind that you must be **coherent**
+ 
+_e.g. you cannot import protein interactions if you didn't import any protein yet!_
+
+----
+
 ### Bio4j APIs
 
 > 1. abstract **domain model**
@@ -223,13 +231,10 @@ Modules and relationship among them
 
 ### domain model
 
-Diagram (maybe also Bio4jExplorer??)
+Bio4j database has a **well-defined** domain model and all nodes and relationship comply with this abstract model
 
 ----
 
-<!-- 
-  it looks deformed because of the aspect ratio; it should be at least 4:3
--->
 ![](Bio4jDomainModelWithCardinality.jpg)
 
 ----
@@ -288,11 +293,11 @@ Optimizations, features, etc.
 
 ### Bio4j and the cloud
 
-* Interoperability and data distribution
-* Backup and storage
-* Scalability
-* Cost-effective
+* **Interoperability** and data distribution
+* **Backup** and **storage**
+* **Scalability**
 * Applications and service providers on the cloud
+* Cost-effective
 
 ----
 
@@ -324,9 +329,14 @@ use cases, case studies, community
 
 ### use cases
 
+
+<!--
 ----
 
 ### ??? and !!!
+
+I don't get what's this... :|
+-->
 
 ----
 
@@ -402,3 +412,5 @@ research group, team
     bio data integration
 - **[Evdokim Kovach](http://ohnosequences.com/ekovach)**<br /> 
     dev
+	
+----
