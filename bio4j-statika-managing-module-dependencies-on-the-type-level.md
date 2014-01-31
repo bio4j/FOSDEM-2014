@@ -22,7 +22,7 @@ Bio4j bioinformatics graph database is modular and customizable, allowing you to
 
 ### Bio4j modules
 
-<!-- some diagram of dependencies (pic) -->
+- some diagram of dependencies (pic)
 
 ----
 
@@ -96,9 +96,46 @@ Scala type system: [shapeless](https://github.com/milessabin/shapeless) + [stati
 
 ----
 
-<!-- TODO: structure this on several slides -->
+### Defining inner bundles hierarchy
 
-- declaring layout of existing modules using statika bundles (pic of the hierarchy)
-- respecting dependencies on different levels (raw data inter-deps, modules depend on raw data + their own interdeps)
-- (?) possibility to make incremental import of modules to existing releases
-- ease and robustness of releasing (incl. tests) and deployment (thnx to aws-statika part + statika-cli for applying bundles)
+- what is a module of Bio4j — viewing it's inner structure:
+  + raw data
+  + database initialization (type definitions etc.)
+  + importing process
+  + providing API
+- pic of the hierarchy
+
+----
+
+### Relation between modules on the bundles level
+
+- respecting dependencies on different levels
+- pic of two modules with their bundles structure with inner dependencies
+- it's all complex enough to not track it manually
+- Statika checks correctness and linearizes this deps graph!
+
+----
+
+### Incremental import
+
+- incremental import of modules to existing releases
+- examples: different combinations, not repeating already done work
+- possibility to do it abstractly with (some extensions of) Statika
+
+----
+
+### Releasing and deploying Bio4j
+
+- ease and robustness of releasing (incl. tests) 
+- deployment (thnx to aws-statika part + statika-cli for applying bundles)
+
+----
+
+### Summary
+
+- abstract layout of bundles for any Bio4j module
+- a set of concrete modules, which conform to this layout
+- dependencies between modules
+- tracking dependencies on all levels
+- in the end we want just to do things in the right order
+- and do the real work, using cloud ifrastructure
