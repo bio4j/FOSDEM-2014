@@ -231,7 +231,7 @@ _e.g. you cannot import protein interactions if you didn't import any protein ye
 
 ### domain model
 
-Bio4j database has a **well-defined** domain model and all nodes and relationship comply with this abstract model
+Bio4j database has a **well-defined** domain model and all nodes and relationships comply with this abstract model
 
 ----
 
