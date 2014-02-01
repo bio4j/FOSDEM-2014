@@ -37,10 +37,18 @@
     font-weight: normal;
     color: #b8463d;
   }
-  h1 {  font-size:2em; padding: 0.6666em 0; }
-  h1 { padding-top: 0; }
-  h2 {  font-size:1.75em; padding:0.381em 0;  }
+  h1 {  
+    font-size:2em; 
+    padding: 0.6666em 0;
+    padding-top: 0; 
+  }
+  h2 {  
+    font-size:1.75em; 
+    padding:0.381em 0;
+    margin-top:1.5em;
+  }
   h3 {  
+    margin-top:-1.5em; /*This heading should give more space to the text*/
     font-size: 1.5em; 
     padding-top: 0;
     padding-bottom: 0.8888em;
@@ -222,7 +230,7 @@
 <section>
   <h1 class="title">Bio4j + Statika</h1>
   <h2 class="author"><a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a></h2>
-  <h3 class="date">FOSDEM GraphDevRoom 2014</h3>
+  <h3 class="date">Graph Devroom @ FOSDEM 2014</h3>
 </section>
 <div id="logos_div">
   <div id="ohnoseq_logo_div">
@@ -242,114 +250,189 @@
     </a>
   </div>
 </div> 
-<section id="bio4j-statika-managing-module-dependencies-on-the-type-level" class="titleslide slide level1"><h1>Bio4j + Statika: Managing module dependencies on the type level</h1></section><section id="bio4j-modules" class="slide level2">
+<section class="slide level2">
+
+<!-- Bio4j + Statika: Managing module dependencies on the type level
+
+General (toplevel) structure:
+* Bio4j modules   = customizability (important and useful)
+* Statika         = a generic module system (generic and static)
+* Bio4j + Statika = happiness/awesomeness/allgoodthingsintheworldtogether (for developers and users)
+-->
+
+</section>
+<section id="bio4j-modules" class="slide level2">
 <h1>Bio4j modules</h1>
-</section><section class="slide level2">
+<!--------------------------------------------------------------------------------
++ Bio4j bioinformatics graph database is modular and customizable
++ It integrates a lot of data from different sources 
+--------------------------------------------------------------------------------->
 
-<figure>
-<img src="overlappingDBsBiology.jpg" />
-</figure>
-<!-- you already saw this diagram and it just shows that 
-Bio4j integrates a lot of data from _different_ sources -->
-
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p><img src="resources/Bio4jModules.png" /> </p>
-<!-- actually it's a bit more involved -->
+<!--------------------------------------------------------------------------------
++ This diagram illustrates a set of Bio4j modules and their dependencies
++ These dependencies should be taken into account when the data is imported from 
+  those sources
+--------------------------------------------------------------------------------->
 
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <h3 id="custom-bio4j-releases">Custom Bio4j releases</h3>
 <ul>
 <li>[NCBI Taxonomy] + [GI index]<br /> for metagenomics tool</li>
 <li>??? moar examples ???</li>
 </ul>
-<!--
-- a lot of data in modules => 
-  importance of possibility to import only what you really need
-- different releases/distributions/builds
-- may be some examples of interesting/useful/non-obvious combinations (ask @pablopareja)
-- real need of systemized/organized way of managing these modules
+<!--------------------------------------------------------------------------------
++ Every module represents quite a big amount of data, 
+  so it is useful to have a release/build/distribution/WHAT? of Bio4j,
+  which includes only data you need
++ For example, <taxonomy modules for metapasta>
+--------------------------------------------------------------------------------->
 
+<!-- more points: (???)
+* real need of systemized/organized way of managing these modules
 * releases as combinations of modules + example(s)
-* why do we need to do smth with all this (i.e. why statika is needed at all),
+* why do we need to do smth with all this (i.e. why statika is needed at all)
 -->
 
-</section><section id="what-is-statika" class="slide level2">
+</section>
+<section id="what-is-statika" class="slide level2">
 <h1>What is Statika</h1>
-</section><section class="slide level2">
+<!--------------------------------------------------------------------------------
+Essentially, it is a set of Scala libraries which allows you to declare 
+dependencies between components of any modular system and track their correctness 
+using Scala type system.
+It has several layers, and can be seen as...
+--------------------------------------------------------------------------------->
+
+</section>
+<section class="slide level2">
 
 <h3 id="a-module-system">A module system</h3>
-<p>Scala type system: <a href="https://github.com/milessabin/shapeless">shapeless</a> + <a href="https://github.com/ohnosequences/statika">statika</a></p>
+<!-- [shapeless](https://github.com/milessabin/shapeless) + [statika](https://github.com/ohnosequences/statika) -->
+
 <ul>
-<li>Modules as Scala types — Bundles</li>
-<li>They can depend on each other!</li>
-<li>It’s validated by compiler</li>
-<li>Statika does linearization of the deps graph</li>
+<li>Modules as Scala types — <em>bundles</em></li>
+<li>They can <em>depend</em> on each other!</li>
+<li>It’s validated by compiler —<br /> i.e. <em>statically</em></li>
+<li>Linearizing types graph to get them in the right order</li>
 </ul>
-<!-- keywords: 
-* mention install method and installing with deps in the right order
-* acyclic directed graph
+<!--------------------------------------------------------------------------------
+First of all as an _abstract_ module system. <read the list>
+Keywords:
+* install method and installing with deps in the right order
+* acyclic directed graph of type dependencies
 * shapeless, heterogeneous lists and etc.
 * type-level traversing and linearization 
-* ? 
--->
+--------------------------------------------------------------------------------->
 
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/StatikaLinearization.png" />
+</figure>
+<!-- not sure if this is needed for anything -->
+
+</section>
+<section class="slide level2">
 
 <h3 id="a-package-manager">A package manager</h3>
-<p><a href="http://www.scala-sbt.org/">SBT</a> (Simple Build Tool) + <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika plugin</a></p>
 <ul>
-<li>Bundles packed as versioned artifacts (jars)</li>
-<li>Reusing SBT infrastructure <!-- it tracks dependencies on the artifact level --></li>
-<li>sbt-statika plugin for a standardized release process</li>
+<li>Packing bundles into versioned artifacts (jars)</li>
+<li>Reusing <a href="http://www.scala-sbt.org/">SBT</a> (Simple Build Tool) infrastructure <!-- it tracks dependencies on the artifact level --></li>
+<li>Standardizing settings and release process with the <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika plugin</a></li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <h3 id="a-deployment-tool">A deployment tool</h3>
 <p><a href="http://aws.amazon.com/">AWS</a> (Amazon Web Services) + <a href="https://github.com/ohnosequences/aws-statika">aws-statika lib</a></p>
 <ul>
-<li>“Apply” bundle — to deploy it to an EC2 instance</li>
-<li>Statika distributions — an abstraction for the cloud infrastructure specifics</li>
-<li>Statika as a configuration system</li>
+<li>Bundles can be <em>applied</em>, i.e. deployed it to an EC2 instance</li>
+<li>Statika <em>distributions</em> — an abstraction for the cloud infrastructure specifics</li>
 </ul>
-<!-- needs to be structured better -->
+<!--------------------------------------------------------------------------------
++ Thanks to this, it's possible now to deploy only selected components of the 
+  integrated data sets, with Amazon Web Services deployments on hardware specifically 
+  configured for them.
++ Distributions are just a declaration that a set of bundles can be applied
+  with particular infrastructure-specific settings
+--------------------------------------------------------------------------------->
 
-</section><section id="bio4j-statika" class="slide level2">
+</section>
+<section id="bio4j-statika" class="slide level2">
 <h1>Bio4j + Statika</h1>
 <!-- the main part, so the previous introductory parts shouldn't be too long -->
 
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
-<h3 id="defining-inner-bundles-hierarchy">Defining inner bundles hierarchy</h3>
-<p>What is a module of Bio4j:</p>
+<h3 id="defining-bio4j-modules">Defining Bio4j modules</h3>
+<p>Decomposing it:</p>
 <ul>
 <li>Raw data</li>
 <li>Node/relations type defs</li>
 <li>Importing process</li>
-<li>Some API</li>
+<li>Exposing some API</li>
 </ul>
-</section><section class="slide level2">
+<!--------------------------------------------------------------------------------
++ All modules have similar inner structure
++ It should be decomposed and represented as a hierarchy of bundles
++ So every module ... <read the list>
+--------------------------------------------------------------------------------->
 
+</section>
+<section class="slide level2">
+
+<h3 id="inner-bundles-layout">Inner bundles layout</h3>
 <p><img src="resources/Bio4jStatikaBundles.png" /> </p>
-</section><section class="slide level2">
+<!-- quick explanation of the terminology -->
 
-<h3 id="relation-between-modules-on-the-bundles-level">Relation between modules on the bundles level</h3>
-<ul>
-<li>respecting dependencies on different levels</li>
-<li>pic of two modules with their bundles structure with inner dependencies</li>
-<li>it’s all complex enough to not track it manually</li>
-<li>Statika checks correctness and linearizes this deps graph!</li>
-</ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/Bio4jModulesExample.png" />
+</figure>
+<!--------------------------------------------------------------------------------
+Relation between modules on the bundles level:
++ respecting dependencies on different levels
++ it's all complex enough to not track it manually
++ Statika checks correctness and linearizes this deps graph!
+--------------------------------------------------------------------------------->
+
+</section>
+<section class="slide level2">
 
 <h3 id="incremental-import">Incremental import</h3>
 <ul>
-<li>incremental import of modules to existing releases</li>
-<li>examples: different combinations, not repeating already done work</li>
-<li>possibility to do it abstractly with (some extensions of) Statika</li>
+<li>incremental import of modules to existing distributions</li>
+<li>not repeating already done work</li>
+<li>possibility to control it abstractly</li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/Bio4jModulesExample.png" />
+</figure>
+<!-- So again, this is a usual structure -->
+
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/Bio4jModulesExampleIncremental.png" />
+</figure>
+<!-- And this is a structure which reuses already existing deistributions -->
+
+</section>
+<section class="slide level2">
 
 <h3 id="ease-of-releasing-bio4j">Ease of releasing Bio4j</h3>
 <ul>
@@ -357,7 +440,8 @@ Bio4j integrates a lot of data from _different_ sources -->
 <li>be sure not to spend resources on a wrong configuration</li>
 <li>use tools for easy deployment: sbt-statika + statika-cli</li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <h3 id="summary-bio4j-statika">Summary: Bio4j + Statika</h3>
 <ul>
@@ -365,7 +449,7 @@ Bio4j integrates a lot of data from _different_ sources -->
 <li>a set of <em>concrete</em> modules <!-- which conform to this layout and have their own deps --></li>
 <li>tracking dependencies on <em>all levels</em> <!-- "automatically" on all levels --></li>
 <li>linearizing them <em>automatically</em> <!-- we just want to do things in the right order --></li>
-<li>using the <em>cloud</em> infrastructure <!-- for doing actual work --></li>
+<li>using AWS <em>cloud</em> infrastructure<br /> for doing hard work</li>
 </ul>
 </section>
 <!-- {{{{ dzslides core
