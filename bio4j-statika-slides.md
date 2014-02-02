@@ -2,7 +2,15 @@
 % [Alexey Alekhin](http://ohnosequences.com/aalekhin)
 % Graph Devroom @ FOSDEM 2014
 
-<!-- Bio4j + Statika: Managing module dependencies on the type level
+![](resources/Bio4jDataSources.jpg)\ 
+
+<!--------------------------------------------------------------------------------
++ Bio4j bioinformatics graph database is modular and customizable
++ It integrates a lot of data from different sources 
+--------------------------------------------------------------------------------->
+
+<!-- 
+Bio4j + Statika: Managing module dependencies on the type level
 
 General (toplevel) structure:
 * Bio4j modules   = customizability (important and useful)
@@ -10,60 +18,66 @@ General (toplevel) structure:
 * Bio4j + Statika = happiness/awesomeness/allgoodthingsintheworldtogether (for developers and users)
 -->
 
-## Bio4j modules
-
-<!--------------------------------------------------------------------------------
-+ Bio4j bioinformatics graph database is modular and customizable
-+ It integrates a lot of data from different sources 
---------------------------------------------------------------------------------->
-
 ----
+
+### Bio4j modules
 
 ![](resources/Bio4jModules.png)\   
 
 <!--------------------------------------------------------------------------------
-+ This diagram illustrates a set of Bio4j modules and their dependencies
-+ These dependencies should be taken into account when the data is imported from 
-  those sources
++ This diagram illustrates a set of Bio4j modules and their interdependencies
++ Every module represents quite a big amount of data, so it is useful to have 
+  a release of Bio4j, which includes only data you need
 --------------------------------------------------------------------------------->
 
 ----
 
-### Custom Bio4j releases
+### Bio4j customization
 
-- [NCBI Taxonomy] + [GI index]  
-    for metagenomics tool
-- ??? moar examples ???
+![](resources/Bio4jModulesSelected.png)\   
 
 <!--------------------------------------------------------------------------------
-+ Every module represents quite a big amount of data, 
-  so it is useful to have a release/build/distribution/WHAT? of Bio4j,
-  which includes only data you need
-+ For example, <taxonomy modules for metapasta>
+For example ...
 --------------------------------------------------------------------------------->
-
-<!-- more points: (???)
-* real need of systemized/organized way of managing these modules
-* releases as combinations of modules + example(s)
-* why do we need to do smth with all this (i.e. why statika is needed at all)
--->
 
 ----
 
-## What is Statika
+### Bio4j custom releases
+
+![](resources/Bio4jModulesSelectedWithDeps.png)\   
 
 <!--------------------------------------------------------------------------------
-Essentially, it is a set of Scala libraries which allows you to declare 
-dependencies between components of any modular system and track their correctness 
-using Scala type system.
-It has several layers, and can be seen as...
+But of course we need to take into account dependencies between these modules
 --------------------------------------------------------------------------------->
 
 ----
 
-### A module system
+### Goals
 
-<!-- [shapeless](https://github.com/milessabin/shapeless) + [statika](https://github.com/ohnosequences/statika) -->
+- Flexible module system
+- Simple import process
+- Dependencies management
+- Easy and robust deployment
+
+<!--------------------------------------------------------------------------------
+So when developing the module system of Bio4j, we want ...
+--------------------------------------------------------------------------------->
+
+----
+
+![](resources/ClockFacesStatika.jpg)\ 
+
+<!--------------------------------------------------------------------------------
++ And here comes Statika!
++ It is a set of Scala libraries which allows you to declare dependencies between 
+  components of any modular system and track their correctness using Scala type 
+  system. 
++ It has several layers, and can be seen as...
+--------------------------------------------------------------------------------->
+
+----
+
+### Abstract module system
 
 - Modules as Scala types — _bundles_
 - They can _depend_ on each other!
@@ -82,13 +96,7 @@ Keywords:
 
 ----
 
-![](resources/StatikaLinearization.png)
-
-<!-- not sure if this is needed for anything -->
-
-----
-
-### A package manager
+### Managing artifacts
 
 - Packing bundles into versioned artifacts (jars)
 - Reusing [SBT](http://www.scala-sbt.org/) (Simple Build Tool) infrastructure 
@@ -97,9 +105,9 @@ Keywords:
 
 ----
 
-### A deployment tool
+### Deployment
 
-[AWS](http://aws.amazon.com/) (Amazon Web Services) + [aws-statika lib](https://github.com/ohnosequences/aws-statika)
+[Amazon Web Services](http://aws.amazon.com/) + [aws-statika lib](https://github.com/ohnosequences/aws-statika)
 
 - Bundles can be _applied_, i.e. deployed it to an EC2 instance
 - Statika _distributions_ — an abstraction for the cloud infrastructure specifics
@@ -145,7 +153,7 @@ Decomposing it:
 
 ----
 
-![](resources/Bio4jModulesExample.png)
+![](resources/Bio4jModulesExample.png)\ 
 
 <!--------------------------------------------------------------------------------
 Relation between modules on the bundles level:
@@ -158,38 +166,37 @@ Relation between modules on the bundles level:
 
 ### Incremental import
 
-- incremental import of modules to existing distributions
-- not repeating already done work
-- possibility to control it abstractly
+- Incremental import of data  
+  to existing Bio4j distributions
+- Not repeating already done work
+- Easy to describe abstractly
 
 ----
 
-![](resources/Bio4jModulesExample.png)
+![](resources/Bio4jModulesExampleIncremental.png)\ 
 
-<!-- So again, this is a usual structure -->
-
-----
-
-![](resources/Bio4jModulesExampleIncremental.png)
-
-<!-- And this is a structure which reuses already existing deistributions -->
+<!-- this is a structure which reuses already existing distribution -->
 
 ----
 
-### Ease of releasing Bio4j
+### Custom release of Bio4j
 
-- create a bundle with needed modules
-- be sure not to spend resources on a wrong configuration
-- use tools for easy deployment: 
-    sbt-statika + statika-cli
+- create a release-bundle with needed modules
+- be sure not to spend resources on a wrong configuration —  
+  compile it!
+- use tools for easy release and deployment:  
+  [sbt-statika](https://github.com/ohnosequences/sbt-statika) + [statika-cli](https://github.com/ohnosequences/statika-cli)
 
 ----
 
-### Summary: Bio4j + Statika
+### Summary
 
-- _abstract_ layout of bundles <!-- for any Bio4j module -->
-- a set of _concrete_ modules <!-- which conform to this layout and have their own deps -->
-- tracking dependencies on _all levels_ <!-- "automatically" on all levels -->
-- linearizing them _automatically_ <!-- we just want to do things in the right order -->
-- using AWS _cloud_ infrastructure  
-  for doing hard work
+#### Bio4j + Statika = win!
+
+- _Abstract_ layout of bundles <!-- for any Bio4j module -->
+- Hierarchy of _concrete_ modules <!-- which conform to this layout and have their own deps -->
+- Tracking deps on _all levels_ <!-- "automatically" on all levels -->
+<!-- - Linearizing them _automatically_ — we just want to do things in the right order -->
+- Doing it at _compile time_
+- Using AWS _cloud_ infrastructure  
+  for the actual work
