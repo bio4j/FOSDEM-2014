@@ -33,7 +33,8 @@ $endif$
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-$if(with-pdf)$
+$if(no-pdf)$
+$else$
 <script>
   document.write( '<link rel="stylesheet" href="reveal.js/css/print/' +
     ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
