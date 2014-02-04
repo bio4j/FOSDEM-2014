@@ -79,7 +79,7 @@ Highly **interconnected** overlapping knowledge **spread** through _different da
 
 ### why graphs
 
-In most cases all data is modeled in **Relational** Databases or sometimes even just as plain `CSV` files.
+In most cases all data is modeled in _**Relational Databases**_ or sometimes even just as plain _**`CSV` files**_.
 
 ----
 
@@ -103,7 +103,7 @@ does not go both ways
 
 ----
  
-And _**this implies**_:
+### _not-so-good_ implications
 
 * **Auxiliary tables**
 * **Artificial IDs**
@@ -112,20 +112,24 @@ And _**this implies**_:
 
 ----
 
+### biology _!=_ table
+
 **Life** in general and **biology** in particular are probably not 100% like a graph...
 
 but one thing's sure, they _**are not a set of tables!**_
 
 ----
 
-* Problems with technology choices (RDBs and so on)
-* Biology is a graph and all that blablabla
+### why graph databases
+
+* **Data** stored in a way that **semantically represents its own structure**
+* Incorporating new data is easy --> **scalability** 
 
 ----
 
 ### why graph databases
 
-* mention here local indexes!
+* **Vertex-centric** _(local)_ indices allow for complex traversals --> overcoming **supernode problem**
 
 ----
 
@@ -147,17 +151,34 @@ data, model, technologies, APIs...
 
 <!-- Details about Bio4j -->
 
-### a bit of history
+<br/>
+<br/>
 
-* How it all started (Gene Ontology & BG7)
-* How it became the BigData platform it is today
+### a bit of _history_
+
+From the beginnings to the BigData platform it is today
+
+----
+
+### How it all started 
+
+* Need for **massive access** to _Gene Ontology_ annotations
+* [**BG7**](http://bg7.ohnosequences.com/) bacterial genome annotation system 
+* Need for massive direct access to **protein information**
+
+----
+
+### more and more data!
+
+* As _other_ data sources were becoming a _bottleneck_ they were being added to Bio4j
+* First it was Uniprot KB, then Uniref and **we didn't stop yet :)**
 
 ----
 
 ###  numbers
 
 * $10^9$ edges
-* $2\times 10^8$ nodes
+* $2 \times 10^8$ nodes
 * $6 \times 10^8$ properties
 * $150$ edge types
 * $40$ node types
@@ -172,7 +193,7 @@ data, model, technologies, APIs...
 
 ### Bio4j structure
 
-Modules and relationship among them
+Bio4j importing process is **modular** and **customizable** allowing you to import just the data you are interested in.
 
 ----
 
@@ -192,6 +213,14 @@ Modules and relationship among them
 
 ----
 
+### data sources - modules III
+
+Just keep in mind that you must be **coherent**
+ 
+_e.g. you cannot import protein interactions if you didn't import any protein yet!_
+
+----
+
 ### Bio4j APIs
 
 > 1. abstract **domain model**
@@ -202,13 +231,10 @@ Modules and relationship among them
 
 ### domain model
 
-Diagram (maybe also Bio4jExplorer??)
+Bio4j database has a **well-defined** domain model and all nodes and relationships comply with this abstract model
 
 ----
 
-<!-- 
-  it looks deformed because of the aspect ratio; it should be at least 4:3
--->
 ![](Bio4jDomainModelWithCardinality.jpg)
 
 ----
@@ -221,17 +247,11 @@ Diagram (maybe also Bio4jExplorer??)
 
 ----
 
-**Key advantage** 
+### Key advantage
 
 _Different_ **graph topologies** at the storage level, _same_ **domain model**. 
 
 Example: use **type nodes** in _Titan_, **labels** in _Neo4j_.
-
-----
-
-### the property graph model
-
-* Simple explanation with a couple of samples
 
 ----
 
@@ -273,11 +293,11 @@ Optimizations, features, etc.
 
 ### Bio4j and the cloud
 
-* Interoperability and data distribution
-* Backup and storage
-* Scalability
-* Cost-effective
+* **Interoperability** and data distribution
+* **Backup** and **storage**
+* **Scalability**
 * Applications and service providers on the cloud
+* Cost-effective
 
 ----
 
@@ -309,9 +329,14 @@ use cases, case studies, community
 
 ### use cases
 
+
+<!--
 ----
 
 ### ??? and !!!
+
+I don't get what's this... :|
+-->
 
 ----
 
@@ -319,19 +344,24 @@ use cases, case studies, community
 
 * **[bg7](http://bg7.ohnosequences.com)** genome annotation
 * **mg7** metagenomics analysis
-* comparative genomics, network analysis, ...
+* comparative genomics, network analysis, genome assembly, ...
 
 ----
 
 ### case study II
 
-* **Ohio State University** explain, explain
+**Ohio State University**
+
+ * **Integration** and **analysis** of Chip-seq data
+ * **Modeling** genomic information and **gene regulatory networks**
 
 ----
 
 ### case study III
 
-* **Berkeley** explain, explain
+**Berkeley Phylogenomics Group**
+
+* Graph database for _Big Data challenges_ in **genomics** developed **on top of Bio4j**
 
 ----
 
@@ -382,3 +412,5 @@ research group, team
     bio data integration
 - **[Evdokim Kovach](http://ohnosequences.com/ekovach)**<br /> 
     dev
+	
+----

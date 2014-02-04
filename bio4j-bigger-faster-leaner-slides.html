@@ -317,7 +317,7 @@
 <section class="slide level2">
 
 <h3 id="why-graphs">why graphs</h3>
-<p>In most cases all data is modeled in <strong>Relational</strong> Databases or sometimes even just as plain <code>CSV</code> files.</p>
+<p>In most cases all data is modeled in <em><strong>Relational Databases</strong></em> or sometimes even just as plain <em><strong><code>CSV</code> files</strong></em>.</p>
 </section>
 <section class="slide level2">
 
@@ -339,7 +339,7 @@
 </section>
 <section class="slide level2">
 
-<p>And <em><strong>this implies</strong></em>:</p>
+<h3 id="not-so-good-implications"><em>not-so-good</em> implications</h3>
 <ul>
 <li><strong>Auxiliary tables</strong></li>
 <li><strong>Artificial IDs</strong></li>
@@ -349,21 +349,23 @@
 </section>
 <section class="slide level2">
 
+<h3 id="biology-table">biology <em>!=</em> table</h3>
 <p><strong>Life</strong> in general and <strong>biology</strong> in particular are probably not 100% like a graph…</p>
 <p>but one thing’s sure, they <em><strong>are not a set of tables!</strong></em></p>
 </section>
 <section class="slide level2">
 
+<h3 id="why-graph-databases">why graph databases</h3>
 <ul>
-<li>Problems with technology choices (RDBs and so on)</li>
-<li>Biology is a graph and all that blablabla</li>
+<li><strong>Data</strong> stored in a way that <strong>semantically represents its own structure</strong></li>
+<li>Incorporating new data is easy –&gt; <strong>scalability</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="why-graph-databases">why graph databases</h3>
+<h3 id="why-graph-databases-1">why graph databases</h3>
 <ul>
-<li>mention here local indexes!</li>
+<li><strong>Vertex-centric</strong> <em>(local)</em> indices allow for complex traversals –&gt; overcoming <strong>supernode problem</strong></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -384,10 +386,25 @@
 
 <!-- Details about Bio4j -->
 
-<h3 id="a-bit-of-history">a bit of history</h3>
+<p><br/> <br/></p>
+<h3 id="a-bit-of-history">a bit of <em>history</em></h3>
+<p>From the beginnings to the BigData platform it is today</p>
+</section>
+<section class="slide level2">
+
+<h3 id="how-it-all-started">How it all started</h3>
 <ul>
-<li>How it all started (Gene Ontology &amp; BG7)</li>
-<li>How it became the BigData platform it is today</li>
+<li>Need for <strong>massive access</strong> to <em>Gene Ontology</em> annotations</li>
+<li><a href="http://bg7.ohnosequences.com/"><strong>BG7</strong></a> bacterial genome annotation system</li>
+<li>Need for massive direct access to <strong>protein information</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="more-and-more-data">more and more data!</h3>
+<ul>
+<li>As <em>other</em> data sources were becoming a <em>bottleneck</em> they were being added to Bio4j</li>
+<li>First it was Uniprot KB, then Uniref and <strong>we didn’t stop yet :)</strong></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -410,7 +427,7 @@
 <section class="slide level2">
 
 <h3 id="bio4j-structure">Bio4j structure</h3>
-<p>Modules and relationship among them</p>
+<p>Bio4j importing process is <strong>modular</strong> and <strong>customizable</strong> allowing you to import just the data you are interested in.</p>
 </section>
 <section class="slide level2">
 
@@ -432,6 +449,12 @@
 </section>
 <section class="slide level2">
 
+<h3 id="data-sources---modules-iii">data sources - modules III</h3>
+<p>Just keep in mind that you must be <strong>coherent</strong></p>
+<p><em>e.g. you cannot import protein interactions if you didn’t import any protein yet!</em></p>
+</section>
+<section class="slide level2">
+
 <h3 id="bio4j-apis">Bio4j APIs</h3>
 <ol class="incremental" type="1">
 <li>abstract <strong>domain model</strong></li>
@@ -442,13 +465,10 @@
 <section class="slide level2">
 
 <h3 id="domain-model">domain model</h3>
-<p>Diagram (maybe also Bio4jExplorer??)</p>
+<p>Bio4j database has a <strong>well-defined</strong> domain model and all nodes and relationships comply with this abstract model</p>
 </section>
 <section class="slide level2">
 
-<!-- 
-  it looks deformed because of the aspect ratio; it should be at least 4:3
--->
 <figure>
 <img src="Bio4jDomainModelWithCardinality.jpg" />
 </figure>
@@ -464,16 +484,9 @@
 </section>
 <section class="slide level2">
 
-<p><strong>Key advantage</strong></p>
+<h3 id="key-advantage">Key advantage</h3>
 <p><em>Different</em> <strong>graph topologies</strong> at the storage level, <em>same</em> <strong>domain model</strong>.</p>
 <p>Example: use <strong>type nodes</strong> in <em>Titan</em>, <strong>labels</strong> in <em>Neo4j</em>.</p>
-</section>
-<section class="slide level2">
-
-<h3 id="the-property-graph-model">the property graph model</h3>
-<ul>
-<li>Simple explanation with a couple of samples</li>
-</ul>
 </section>
 <section class="slide level2">
 
@@ -516,11 +529,11 @@
 
 <h3 id="bio4j-and-the-cloud">Bio4j and the cloud</h3>
 <ul>
-<li>Interoperability and data distribution</li>
-<li>Backup and storage</li>
-<li>Scalability</li>
-<li>Cost-effective</li>
+<li><strong>Interoperability</strong> and data distribution</li>
+<li><strong>Backup</strong> and <strong>storage</strong></li>
+<li><strong>Scalability</strong></li>
 <li>Applications and service providers on the cloud</li>
+<li>Cost-effective</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -552,31 +565,36 @@
 
 <h3 id="use-cases">use cases</h3>
 </section>
-<section class="slide level2">
+<section id="section" class="slide level2">
+<h1><!--
+----
 
-<h3 id="and">??? and !!!</h3>
-</section>
-<section class="slide level2">
+### ??? and !!!
 
+I don't get what's this... :|
+--></h1>
 <h3 id="how-we-use-it">how we use it</h3>
 <ul>
 <li><strong><a href="http://bg7.ohnosequences.com">bg7</a></strong> genome annotation</li>
 <li><strong>mg7</strong> metagenomics analysis</li>
-<li>comparative genomics, network analysis, …</li>
+<li>comparative genomics, network analysis, genome assembly, …</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <h3 id="case-study-ii">case study II</h3>
+<p><strong>Ohio State University</strong></p>
 <ul>
-<li><strong>Ohio State University</strong> explain, explain</li>
+<li><strong>Integration</strong> and <strong>analysis</strong> of Chip-seq data</li>
+<li><strong>Modeling</strong> genomic information and <strong>gene regulatory networks</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <h3 id="case-study-iii">case study III</h3>
+<p><strong>Berkeley Phylogenomics Group</strong></p>
 <ul>
-<li><strong>Berkeley</strong> explain, explain</li>
+<li>Graph database for <em>Big Data challenges</em> in <strong>genomics</strong> developed <strong>on top of Bio4j</strong></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -622,6 +640,9 @@
 <li><strong><a href="http://ohnosequences.com/mmanrique">Marina Manrique</a></strong> <br /> bio data integration</li>
 <li><strong><a href="http://ohnosequences.com/ekovach">Evdokim Kovach</a></strong><br /> dev</li>
 </ul>
+</section>
+<section class="slide level2">
+
 </section>
 <!-- {{{{ dzslides core
 #
