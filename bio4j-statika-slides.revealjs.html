@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Bio4j + Statika</title>
+
+<meta name="description" content="Bio4j + Statika">    
+
+  <meta name="author" content="<a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a>" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+  document.write( '<link rel="stylesheet" href="reveal.js/css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script>
+
+<!--[if lt IE 9]>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Bio4j + Statika</h1>
+<h3><a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a></h3>
+<p>
+<h4>Graph Devroom @ FOSDEM 2014</h4>
+</p>
+</section>  
+
+
+<section><section id="bio4j-modules" class="titleslide slide level1"><h1>Bio4j modules</h1></section><section class="slide level2">
+
+<h3 id="bio4j-data-sources">Bio4j data sources</h3>
+<p><img src="resources/Bio4jDataSources.jpg" /> </p>
+<aside class="notes">
+<ul>
+<li>Bio4j bioinformatics graph database is modular and customizable</li>
+<li>It integrates a lot of data from different sources
+</aside>
+</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="bio4j-modules-hierarchy">Bio4j modules hierarchy</h3>
+<p><img src="resources/Bio4jModules.png" /> </p>
+<aside class="notes">
+<ul>
+<li>This diagram illustrates a set of Bio4j modules and their interdependencies</li>
+<li>Every module represents quite a big amount of data, so it is useful to have a release of Bio4j, which includes only data you need
+</aside>
+</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="bio4j-custom-releases">Bio4j custom releases</h3>
+<p><img src="resources/Bio4jModulesSelected.png" /> </p>
+<aside class="notes">
+For example …
+</aside>
+
+</section><section class="slide level2">
+
+<h3 id="bio4j-custom-releases-1">Bio4j custom releases</h3>
+<p><img src="resources/Bio4jModulesSelectedWithDeps.png" /> </p>
+<aside class="notes">
+But of course we need to take into account dependencies between these modules
+</aside>
+
+</section><section class="slide level2">
+
+<h3 id="goals">Goals</h3>
+<ul>
+<li>Flexible module system</li>
+<li>Simple import process</li>
+<li>Dependencies management</li>
+<li>Easy and robust deployment</li>
+</ul>
+<aside class="notes">
+So when developing the module system of Bio4j, we want …
+</aside>
+
+
+</section></section>
+<section><section id="statika" class="titleslide slide level1"><h1>Statika</h1></section><section class="slide level2">
+
+<h3 id="what-is-statika">What is Statika</h3>
+<p><img src="resources/ClockFacesStatika.jpg" /> </p>
+<aside class="notes">
+<ul>
+<li>And here comes Statika!</li>
+<li>It is a set of Scala libraries which allows you to declare dependencies between components of any modular system and track their correctness using Scala type system.</li>
+<li>It has several layers, and can be seen as…
+</aside>
+</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="abstract-module-system">Abstract module system</h3>
+<ul>
+<li>Modules as Scala types — <em>bundles</em></li>
+<li>They can <em>depend</em> on each other!</li>
+<li>It’s validated by compiler —<br /> i.e. <em>statically</em></li>
+<li>Linearizing types graph to get them in the right order</li>
+</ul>
+<aside class="notes">
+First of all as an <em>abstract</em> module system. <read the list> Keywords: * install method and installing with deps in the right order * acyclic directed graph of type dependencies * shapeless, heterogeneous lists and etc. * type-level traversing and linearization
+</aside>
+
+
+</section><section class="slide level2">
+
+<h3 id="managing-artifacts">Managing artifacts</h3>
+<ul>
+<li>Packing bundles into versioned artifacts (jars)</li>
+<li>Reusing <a href="http://www.scala-sbt.org/">SBT</a> (Simple Build Tool) infrastructure <!-- it tracks dependencies on the artifact level --></li>
+<li>Standardizing settings and release process with the <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika plugin</a></li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="deployment">Deployment</h3>
+<p><a href="http://aws.amazon.com/">Amazon Web Services</a> + <a href="https://github.com/ohnosequences/aws-statika">aws-statika lib</a></p>
+<ul>
+<li>Bundles can be <em>applied</em>, i.e. deployed it to an EC2 instance</li>
+<li>Statika <em>distributions</em> — an abstraction for the cloud infrastructure specifics</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Thanks to this, it’s possible now to deploy only selected components of the integrated data sets, with Amazon Web Services deployments on hardware specifically configured for them.</li>
+<li>Distributions are just a declaration that a set of bundles can be applied with particular infrastructure-specific settings
+</aside>
+
+</li>
+</ul>
+</section></section>
+<section><section id="bio4j-statika" class="titleslide slide level1"><h1>Bio4j + Statika</h1></section><section class="slide level2">
+
+<h3 id="defining-bio4j-modules">Defining Bio4j modules</h3>
+<ul>
+<li>Raw data</li>
+<li>Node/relations type defs</li>
+<li>Importing process</li>
+<li>Exposing some API</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>All modules have similar inner structure</li>
+<li>It should be decomposed and represented as a hierarchy of bundles</li>
+<li>So every module … <read the list>
+</aside>
+
+</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="inner-bundles-layout">Inner bundles layout</h3>
+<p><img src="resources/Bio4jStatikaBundles.png" /> </p>
+<!-- quick explanation of the terminology -->
+
+</section><section class="slide level2">
+
+<h3 id="inner-bundles-layout-example">Inner bundles layout example</h3>
+<p><img src="resources/Bio4jModulesExample.png" /> </p>
+<aside class="notes">
+Relation between modules on the bundles level: + respecting dependencies on different levels + it’s all complex enough to not track it manually + Statika checks correctness and linearizes this deps graph!
+</aside>
+
+
+</section><section class="slide level2">
+
+<h3 id="incremental-import">Incremental import</h3>
+<ul>
+<li>Incremental import of data<br /> to existing Bio4j distributions</li>
+<li>Not repeating already done work</li>
+<li>Easy to describe abstractly</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="incremental-import-example">Incremental import example</h3>
+<p><img src="resources/Bio4jModulesExampleIncremental.png" /> </p>
+<!-- this is a structure which reuses already existing distribution -->
+
+</section><section class="slide level2">
+
+<h3 id="custom-release-of-bio4j">Custom release of Bio4j</h3>
+<ul>
+<li>create a release-bundle with needed modules</li>
+<li>be sure not to spend resources on a wrong configuration —<br /> compile it!</li>
+<li>use tools for easy release and deployment:<br /> <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika</a> + <a href="https://github.com/ohnosequences/statika-cli">statika-cli</a></li>
+</ul>
+</section></section>
+<section><section id="summary" class="titleslide slide level1"><h1>Summary</h1></section><section class="slide level2">
+
+<h3 id="bio4j-statika-win">Bio4j + Statika = win!</h3>
+<ul>
+<li><em>Abstract</em> layout of bundles <!-- for any Bio4j module --></li>
+<li>Hierarchy of <em>concrete</em> modules <!-- which conform to this layout and have their own deps --></li>
+<li>Tracking deps on <em>all levels</em> <!-- "automatically" on all levels --> <!-- - Linearizing them _automatically_ — we just want to do things in the right order --></li>
+<li>Doing it at <em>compile time</em></li>
+<li>Using AWS <em>cloud</em> infrastructure<br /> for the actual work</li>
+</ul>
+</section></section>
+
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.min.js"></script>
+
+<script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+  // available themes are in /reveal.js/css/theme
+      theme: Reveal.getQueryHash().theme || 'moon', 
+  
+  // default/cube/page/concave/zoom/linear/fade/none
+      transition: Reveal.getQueryHash().transition || 'linear',
+  
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+  });
+
+</script>
+
+</body>
+</html>
