@@ -147,7 +147,7 @@ Decomposing it:
 
 ### Inner bundles layout
 
-![](resources/Bio4jStatikaBundles.png)\ 
+![](resources/Bio4jStatikaBundles_.png)\ 
 
 <!-- quick explanation of the terminology -->
 

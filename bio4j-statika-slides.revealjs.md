@@ -60,7 +60,6 @@ But of course we need to take into account dependencies between these modules
 So when developing the module system of Bio4j, we want ...
 </aside>
 
-----
 
 # Statika
 
@@ -124,7 +123,6 @@ Keywords:
   with particular infrastructure-specific settings
 </aside>
 
-----
 
 # Bio4j + Statika
 
