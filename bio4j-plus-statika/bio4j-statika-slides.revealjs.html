@@ -11,23 +11,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-  <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="resources/reveal.js/css/reveal.min.css">
+  <link rel="stylesheet" href="resources/reveal.js/css/theme/moon.css" id="theme">
 
 
 <!-- For syntax highlighting -->
-  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="resources/reveal.js/lib/css/zenburn.css">
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
 <script>
-  document.write( '<link rel="stylesheet" href="reveal.js/css/print/' +
+  document.write( '<link rel="stylesheet" href="resources/reveal.js/css/print/' +
     ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
     '.css" type="text/css" media="print">' );
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="resources/reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 </head>
 
@@ -50,7 +50,7 @@
 <section><section id="bio4j-modules" class="titleslide slide level1"><h1>Bio4j modules</h1></section><section class="slide level2">
 
 <h3 id="bio4j-data-sources">Bio4j data sources</h3>
-<p><img src="resources/Bio4jDataSources.jpg" /> </p>
+<p><img src="resources/images/Bio4jDataSources.jpg" /> </p>
 <aside class="notes">
 <ul>
 <li>Bio4j bioinformatics graph database is modular and customizable</li>
@@ -61,7 +61,7 @@
 </section><section class="slide level2">
 
 <h3 id="bio4j-modules-hierarchy">Bio4j modules hierarchy</h3>
-<p><img src="resources/Bio4jModules.png" /> </p>
+<p><img src="resources/images/Bio4jModules.png" /> </p>
 <aside class="notes">
 <ul>
 <li>This diagram illustrates a set of Bio4j modules and their interdependencies</li>
@@ -72,7 +72,7 @@
 </section><section class="slide level2">
 
 <h3 id="bio4j-custom-releases">Bio4j custom releases</h3>
-<p><img src="resources/Bio4jModulesSelected.png" /> </p>
+<p><img src="resources/images/Bio4jModulesSelected.png" /> </p>
 <aside class="notes">
 For example …
 </aside>
@@ -80,7 +80,7 @@ For example …
 </section><section class="slide level2">
 
 <h3 id="bio4j-custom-releases-1">Bio4j custom releases</h3>
-<p><img src="resources/Bio4jModulesSelectedWithDeps.png" /> </p>
+<p><img src="resources/images/Bio4jModulesSelectedWithDeps.png" /> </p>
 <aside class="notes">
 But of course we need to take into account dependencies between these modules
 </aside>
@@ -103,7 +103,7 @@ So when developing the module system of Bio4j, we want …
 <section><section id="statika" class="titleslide slide level1"><h1>Statika</h1></section><section class="slide level2">
 
 <h3 id="what-is-statika">What is Statika</h3>
-<p><img src="resources/ClockFacesStatika.jpg" /> </p>
+<p><img src="resources/images/ClockFacesStatika.jpg" /> </p>
 <aside class="notes">
 <ul>
 <li>And here comes Statika!</li>
@@ -172,13 +172,13 @@ First of all as an <em>abstract</em> module system. <read the list> Keywords: * 
 </section><section class="slide level2">
 
 <h3 id="inner-bundles-layout">Inner bundles layout</h3>
-<p><img src="resources/Bio4jStatikaBundles.png" /> </p>
+<p><img src="resources/images/Bio4jStatikaBundles.png" /> </p>
 <!-- quick explanation of the terminology -->
 
 </section><section class="slide level2">
 
 <h3 id="inner-bundles-layout-example">Inner bundles layout example</h3>
-<p><img src="resources/Bio4jModulesExample.png" /> </p>
+<p><img src="resources/images/Bio4jModulesExample.png" /> </p>
 <aside class="notes">
 Relation between modules on the bundles level: + respecting dependencies on different levels + it’s all complex enough to not track it manually + Statika checks correctness and linearizes this deps graph!
 </aside>
@@ -195,7 +195,7 @@ Relation between modules on the bundles level: + respecting dependencies on diff
 </section><section class="slide level2">
 
 <h3 id="incremental-import-example">Incremental import example</h3>
-<p><img src="resources/Bio4jModulesExampleIncremental.png" /> </p>
+<p><img src="resources/images/Bio4jModulesExampleIncremental.png" /> </p>
 <!-- this is a structure which reuses already existing distribution -->
 
 </section><section class="slide level2">
@@ -221,8 +221,8 @@ Relation between modules on the bundles level: + respecting dependencies on diff
 
 </div>
 
-<script src="reveal.js/lib/js/head.min.js"></script>
-<script src="reveal.js/js/reveal.min.js"></script>
+<script src="resources/reveal.js/lib/js/head.min.js"></script>
+<script src="resources/reveal.js/js/reveal.min.js"></script>
 
 <script>
   // Full list of configuration options available here:
@@ -233,7 +233,7 @@ Relation between modules on the bundles level: + respecting dependencies on diff
     history: true,
     center: true,
 
-  // available themes are in /reveal.js/css/theme
+  // available themes are in /resources/reveal.js/css/theme
       theme: Reveal.getQueryHash().theme || 'moon', 
   
   // default/cube/page/concave/zoom/linear/fade/none
@@ -241,13 +241,13 @@ Relation between modules on the bundles level: + respecting dependencies on diff
   
   // Optional libraries used to extend on reveal.js
   dependencies: [
-    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-    { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-    // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    { src: 'resources/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'resources/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'resources/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'resources/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'resources/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: 'resources/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
   ]
   });
 
