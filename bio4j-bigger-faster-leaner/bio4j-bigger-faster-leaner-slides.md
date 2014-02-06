@@ -73,7 +73,7 @@ Highly **interconnected** overlapping knowledge **spread** through _different da
 
 ----
 
-![](overlappingDBsBiology.jpg)
+![](resources/images/overlappingDBsBiology.jpg)
 
 ----
 
@@ -89,7 +89,7 @@ That might be OK for simple scenarios but as the **amount** and **diversity** of
 
 ----
 
-![_Doesn't look very compelling right? :)_](GOdomainModel.jpg)
+![_Doesn't look very compelling right? :)_](resources/images/GOdomainModel.jpg)
 
 ----
 
@@ -235,7 +235,7 @@ Bio4j database has a **well-defined** domain model and all nodes and relationshi
 
 ----
 
-![](Bio4jDomainModelWithCardinality.jpg)
+![](resources/images/Bio4jDomainModelWithCardinality.jpg)
 
 ----
 

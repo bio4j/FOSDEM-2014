@@ -11,19 +11,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+<link rel="stylesheet" href="resources/reveal.js/css/reveal.min.css">
 $if(theme)$
-  <link rel="stylesheet" href="reveal.js/css/theme/$theme$.css" id="theme">
+  <link rel="stylesheet" href="resources/reveal.js/css/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="resources/reveal.js/css/theme/default.css" id="theme">
 $endif$
 
 
 <!-- For syntax highlighting -->
 $if(highlight-style)$
-  <link rel="stylesheet" href="reveal.js/lib/css/$highlight-style$.css">
+  <link rel="stylesheet" href="resources/reveal.js/lib/css/$highlight-style$.css">
 $else$
-  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="resources/reveal.js/lib/css/zenburn.css">
 $endif$
 
 
@@ -31,14 +31,14 @@ $endif$
 $if(no-pdf)$
 $else$
 <script>
-  document.write( '<link rel="stylesheet" href="reveal.js/css/print/' +
+  document.write( '<link rel="stylesheet" href="resources/reveal.js/css/print/' +
     ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
     '.css" type="text/css" media="print">' );
 </script>
 $endif$
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="resources/reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 $for(header-includes)$
   $header-includes$
@@ -76,8 +76,8 @@ $body$
 
 </div>
 
-<script src="reveal.js/lib/js/head.min.js"></script>
-<script src="reveal.js/js/reveal.min.js"></script>
+<script src="resources/reveal.js/lib/js/head.min.js"></script>
+<script src="resources/reveal.js/js/reveal.min.js"></script>
 
 <script>
   // Full list of configuration options available here:
@@ -88,7 +88,7 @@ $body$
     history: true,
     center: true,
 
-  // available themes are in /reveal.js/css/theme
+  // available themes are in /resources/reveal.js/css/theme
   $if(theme)$
     theme: Reveal.getQueryHash().theme || '$theme$', 
   $else$
@@ -104,13 +104,13 @@ $body$
 
   // Optional libraries used to extend on reveal.js
   dependencies: [
-    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-    { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-    // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+    { src: 'resources/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'resources/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'resources/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'resources/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'resources/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'resources/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    // { src: 'resources/reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
   ]
   });
 

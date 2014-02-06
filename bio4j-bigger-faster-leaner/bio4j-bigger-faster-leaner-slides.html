@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-  <meta name="author" content="Alexey Alekhin" />
-  <title>Bio4j + Statika</title>
+  <meta name="author" content="Pablo Pareja" />
+  <title>Bio4j</title>
 <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic|Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>
 <style>
   html { background-color: #425331; }
   body { 
-    background-color: #ffffff; 
+    background-color: #f9fcfe; 
     color: #414141;
     text-align: left;
   }
@@ -37,18 +37,10 @@
     font-weight: normal;
     color: #b8463d;
   }
-  h1 {  
-    font-size:2em; 
-    padding: 0.6666em 0;
-    padding-top: 0; 
-  }
-  h2 {  
-    font-size:1.75em; 
-    padding:0.381em 0;
-    margin-top:1.5em;
-  }
+  h1 {  font-size:2em; padding: 0.6666em 0; }
+  h1 { padding-top: 0; }
+  h2 {  font-size:1.75em; padding:0.381em 0;  }
   h3 {  
-    margin-top:-1.5em; /*This heading should give more space to the text*/
     font-size: 1.5em; 
     padding-top: 0;
     padding-bottom: 0.8888em;
@@ -58,7 +50,6 @@
   }
   section.titleslide h1 {}
   h1.title { 
-    margin-top:0;
     text-align: right;
     font-size: 2.4em;
     font-family: Bitter;
@@ -69,7 +60,7 @@
     padding: 0.6666em 0;
     padding-bottom: 0;
   }
-  h2.author { 
+    h2.author { 
     font-size: 1.25em;
     font-family: Open Sans;
     text-align: right;
@@ -116,8 +107,8 @@
     margin-left: -80px;
     margin-top: -120px;
     position:absolute;
-    /*width: 800px;*/
-    /*height: 600px;*/
+    width: 800px;
+    height: 600px;
     top: 0;
     left: 0;
     z-index: -1;
@@ -229,221 +220,429 @@
 </head>
 <body>
 <section>
-  <h1 class="title">Bio4j + Statika</h1>
-  <h2 class="author"><a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a></h2>
-  <h3 class="date">Graph Devroom @ FOSDEM 2014</h3>
+  <h1 class="title">Bio4j</h1>
+  <h2 class="author"><strong><a href="http://twitter.com/pablopareja">Pablo Pareja</a></strong></h2>
+  <h3 class="date"><a href="http://graphdevroom.org"><strong>GraphDevRoom 2014</strong></a></h3>
 </section>
 <div id="logos_div">
   <div id="ohnoseq_logo_div">
     <a href="http://ohnosequences.com">
-      <img id="ohnoseq_logo" src="ohnoseq-logo.png">
+      <img id="ohnoseq_logo" src="resources/logos/ohnoseq-logo.png">
     </a>
   </div>
   </div>
   <div id="era7_logo_div">
     <a href="http://era7bioinformatics.com">
-      <img id="era7_logo" src="era7-logo.png">
+      <img id="era7_logo" src="resources/logos/era7-logo.png">
     </a>
   </div>
   <div id="bio4j_logo_div">
     <a href="http://bio4j.com">   
-      <img id="bio4j_logo" src="bio4j-logo.jpg">
+      <img id="bio4j_logo" src="resources/logos/bio4j-logo.jpg">
     </a>
   </div>
 </div> 
 <section class="slide level2">
 
-<p><img src="resources/Bio4jDataSources.jpg" /> </p>
-<!--------------------------------------------------------------------------------
-+ Bio4j bioinformatics graph database is modular and customizable
-+ It integrates a lot of data from different sources 
---------------------------------------------------------------------------------->
-
 <!-- 
-Bio4j + Statika: Managing module dependencies on the type level
+  Sections
 
-General (toplevel) structure:
-* Bio4j modules   = customizability (important and useful)
-* Statika         = a generic module system (generic and static)
-* Bio4j + Statika = happiness/awesomeness/allgoodthingsintheworldtogether (for developers and users)
+  - what is Bio4j
+  - why Bio4j
+      - why graphs bio stuff
+      - why graph DBs
+      - why cloud
+  - details?
+      - data
+      - model
+      - technologies
+      - other stuff -> dev etc
+  - how Bio4j
+      - use cases
+      - case studies
+      - contact/support/dev/whatever
+  - who Bio4j
+      - era7 and oh no sequences!
+      - team
 -->
 
+<p><br/> <br/></p>
+<h3 id="what-is-bio4j"><em>what</em> is Bio4j</h3>
 </section>
 <section class="slide level2">
 
-<h3 id="bio4j-modules">Bio4j modules</h3>
-<p><img src="resources/Bio4jModules.png" /> </p>
-<!--------------------------------------------------------------------------------
-+ This diagram illustrates a set of Bio4j modules and their interdependencies
-+ Every module represents quite a big amount of data, so it is useful to have 
-  a release of Bio4j, which includes only data you need
---------------------------------------------------------------------------------->
-
+<h3 id="in-one-sentence">in one sentence</h3>
+<p><strong>Bio4j</strong> is a bioinformatics <em>graph</em>-based data platform <strong>integrating</strong> most data available in the most representative <strong>open data sources</strong> around <strong>protein information</strong> available today.</p>
 </section>
 <section class="slide level2">
 
-<h3 id="bio4j-customization">Bio4j customization</h3>
-<p><img src="resources/Bio4jModulesSelected.png" /> </p>
-<!--------------------------------------------------------------------------------
-For example ...
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="bio4j-custom-releases">Bio4j custom releases</h3>
-<p><img src="resources/Bio4jModulesSelectedWithDeps.png" /> </p>
-<!--------------------------------------------------------------------------------
-But of course we need to take into account dependencies between these modules
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="goals">Goals</h3>
+<h3 id="data">data</h3>
 <ul>
-<li>Flexible module system</li>
-<li>Simple import process</li>
-<li>Dependencies management</li>
-<li>Easy and robust deployment</li>
+<li><em><a href="http://www.uniprot.org/help/uniprotkb">UniProt KB</a></em> (SwissProt + Trembl)</li>
+<li><em><a href="http://www.geneontology.org/">Gene Ontology</a></em> (GO)</li>
+<li><em><a href="http://www.uniprot.org/help/uniref">UniRef</a></em> (50,90,100)</li>
+<li><em><a href="http://www.ncbi.nlm.nih.gov/RefSeq/">RefSeq</a></em></li>
+<li><em><a href="http://www.ncbi.nlm.nih.gov/Taxonomy/">NCBI taxonomy</a></em></li>
+<li><em><a href="http://enzyme.expasy.org/">Expasy Enzyme DB</a></em></li>
 </ul>
-<!--------------------------------------------------------------------------------
-So when developing the module system of Bio4j, we want ...
---------------------------------------------------------------------------------->
+<!-- 4 or more '-' create a new slide -->
 
 </section>
 <section class="slide level2">
 
-<p><img src="resources/ClockFacesStatika.jpg" /> </p>
-<!--------------------------------------------------------------------------------
-+ And here comes Statika!
-+ It is a set of Scala libraries which allows you to declare dependencies between 
-  components of any modular system and track their correctness using Scala type 
-  system. 
-+ It has several layers, and can be seen as...
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="abstract-module-system">Abstract module system</h3>
+<h3 id="open">open!</h3>
 <ul>
-<li>Modules as Scala types — <em>bundles</em></li>
-<li>They can <em>depend</em> on each other!</li>
-<li>It’s validated by compiler —<br /> i.e. <em>statically</em></li>
-<li>Linearizing types graph to get them in the right order</li>
-</ul>
-<!--------------------------------------------------------------------------------
-First of all as an _abstract_ module system. <read the list>
-Keywords:
-* install method and installing with deps in the right order
-* acyclic directed graph of type dependencies
-* shapeless, heterogeneous lists and etc.
-* type-level traversing and linearization 
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="managing-artifacts">Managing artifacts</h3>
-<ul>
-<li>Packing bundles into versioned artifacts (jars)</li>
-<li>Reusing <a href="http://www.scala-sbt.org/">SBT</a> (Simple Build Tool) infrastructure <!-- it tracks dependencies on the artifact level --></li>
-<li>Standardizing settings and release process with the <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika plugin</a></li>
+<li><strong>code</strong> <strong><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a></strong></li>
+<li><strong>data</strong> integrates only <strong><a href="http://okfn.org/opendata/">open data</a></strong></li>
+<li><strong>implementation &amp; release</strong> process is 100% public and totally <strong>transparent</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="deployment">Deployment</h3>
-<p><a href="http://aws.amazon.com/">Amazon Web Services</a> + <a href="https://github.com/ohnosequences/aws-statika">aws-statika lib</a></p>
+<p><br/> <br/></p>
+<h3 id="why-bio4j"><em>why</em> Bio4j?</h3>
+<p>bio data + graph databases + the cloud</p>
+</section>
+<section class="slide level2">
+
+<h3 id="biology-dbs-today">biology &amp; DBs today</h3>
+<p>Highly <strong>interconnected</strong> overlapping knowledge <strong>spread</strong> through <em>different databases</em></p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/images/overlappingDBsBiology.jpg" />
+</figure>
+</section>
+<section class="slide level2">
+
+<h3 id="why-graphs">why graphs</h3>
+<p>In most cases all data is modeled in <em><strong>Relational Databases</strong></em> or sometimes even just as plain <em><strong><code>CSV</code> files</strong></em>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="why-graphs-1">why graphs</h3>
+<p>That might be OK for simple scenarios but as the <strong>amount</strong> and <strong>diversity</strong> of <strong>data grows</strong>, <strong>domain models</strong> become crazily <strong>complicated</strong>!</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/images/GOdomainModel.jpg" alt="Doesn’t look very compelling right? :)" /><figcaption><em>Doesn’t look very compelling right? :)</em></figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<h3 id="why-graphs-2">why graphs</h3>
+<p>With a relational paradigm the double implication</p>
+<p><strong>Entity</strong> &lt;–&gt; <strong>Table</strong></p>
+<p>does not go both ways</p>
+</section>
+<section class="slide level2">
+
+<h3 id="not-so-good-implications"><em>not-so-good</em> implications</h3>
 <ul>
-<li>Bundles can be <em>applied</em>, i.e. deployed it to an EC2 instance</li>
-<li>Statika <em>distributions</em> — an abstraction for the cloud infrastructure specifics</li>
-</ul>
-<!--------------------------------------------------------------------------------
-+ Thanks to this, it's possible now to deploy only selected components of the 
-  integrated data sets, with Amazon Web Services deployments on hardware specifically 
-  configured for them.
-+ Distributions are just a declaration that a set of bundles can be applied
-  with particular infrastructure-specific settings
---------------------------------------------------------------------------------->
-
-</section>
-<section id="bio4j-statika" class="slide level2">
-<h1>Bio4j + Statika</h1>
-<!-- the main part, so the previous introductory parts shouldn't be too long -->
-
-</section>
-<section class="slide level2">
-
-<h3 id="defining-bio4j-modules">Defining Bio4j modules</h3>
-<p>Decomposing it:</p>
-<ul>
-<li>Raw data</li>
-<li>Node/relations type defs</li>
-<li>Importing process</li>
-<li>Exposing some API</li>
-</ul>
-<!--------------------------------------------------------------------------------
-+ All modules have similar inner structure
-+ It should be decomposed and represented as a hierarchy of bundles
-+ So every module ... <read the list>
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="inner-bundles-layout">Inner bundles layout</h3>
-<p><img src="resources/Bio4jStatikaBundles_.png" /> </p>
-<!-- quick explanation of the terminology -->
-
-</section>
-<section class="slide level2">
-
-<p><img src="resources/Bio4jModulesExample.png" /> </p>
-<!--------------------------------------------------------------------------------
-Relation between modules on the bundles level:
-+ respecting dependencies on different levels
-+ it's all complex enough to not track it manually
-+ Statika checks correctness and linearizes this deps graph!
---------------------------------------------------------------------------------->
-
-</section>
-<section class="slide level2">
-
-<h3 id="incremental-import">Incremental import</h3>
-<ul>
-<li>Incremental import of data<br /> to existing Bio4j distributions</li>
-<li>Not repeating already done work</li>
-<li>Easy to describe abstractly</li>
+<li><strong>Auxiliary tables</strong></li>
+<li><strong>Artificial IDs</strong></li>
+<li>Dealing with <strong>raw tables</strong> (in spite of Entity-relationship diagrams)</li>
+<li><strong>Integrating</strong> new knowledge becomes <strong>difficult</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p><img src="resources/Bio4jModulesExampleIncremental.png" /> </p>
-<!-- this is a structure which reuses already existing distribution -->
-
+<h3 id="biology-table">biology <em>!=</em> table</h3>
+<p><strong>Life</strong> in general and <strong>biology</strong> in particular are probably not 100% like a graph…</p>
+<p>but one thing’s sure, they <em><strong>are not a set of tables!</strong></em></p>
 </section>
 <section class="slide level2">
 
-<h3 id="custom-release-of-bio4j">Custom release of Bio4j</h3>
+<h3 id="why-graph-databases">why graph databases</h3>
 <ul>
-<li>create a release-bundle with needed modules</li>
-<li>be sure not to spend resources on a wrong configuration —<br /> compile it!</li>
-<li>use tools for easy release and deployment:<br /> <a href="https://github.com/ohnosequences/sbt-statika">sbt-statika</a> + <a href="https://github.com/ohnosequences/statika-cli">statika-cli</a></li>
+<li><strong>Data</strong> stored in a way that <strong>semantically represents its own structure</strong></li>
+<li>Incorporating new data is easy –&gt; <strong>scalability</strong></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="summary">Summary</h3>
-<h4 id="bio4j-statika-win">Bio4j + Statika = win!</h4>
+<h3 id="why-graph-databases-1">why graph databases</h3>
 <ul>
-<li><em>Abstract</em> layout of bundles <!-- for any Bio4j module --></li>
-<li>Hierarchy of <em>concrete</em> modules <!-- which conform to this layout and have their own deps --></li>
-<li>Tracking deps on <em>all levels</em> <!-- "automatically" on all levels --> <!-- - Linearizing them _automatically_ — we just want to do things in the right order --></li>
-<li>Doing it at <em>compile time</em></li>
-<li>Using AWS <em>cloud</em> infrastructure<br /> for the actual work</li>
+<li><strong>Vertex-centric</strong> <em>(local)</em> indices allow for complex traversals –&gt; overcoming <strong>supernode problem</strong></li>
 </ul>
+</section>
+<section class="slide level2">
+
+<h3 id="cloud">cloud</h3>
+<ul>
+<li>data as a service</li>
+<li>machine configurations</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><br/> <br/></p>
+<h3 id="details-about-bio4j"><em>details</em> about Bio4j</h3>
+<p>data, model, technologies, APIs…</p>
+</section>
+<section class="slide level2">
+
+<!-- Details about Bio4j -->
+
+<p><br/> <br/></p>
+<h3 id="a-bit-of-history">a bit of <em>history</em></h3>
+<p>From the beginnings to the BigData platform it is today</p>
+</section>
+<section class="slide level2">
+
+<h3 id="how-it-all-started">How it all started</h3>
+<ul>
+<li>Need for <strong>massive access</strong> to <em>Gene Ontology</em> annotations</li>
+<li><a href="http://bg7.ohnosequences.com/"><strong>BG7</strong></a> bacterial genome annotation system</li>
+<li>Need for massive direct access to <strong>protein information</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="more-and-more-data">more and more data!</h3>
+<ul>
+<li>As <em>other</em> data sources were becoming a <em>bottleneck</em> they were being added to Bio4j</li>
+<li>First it was Uniprot KB, then Uniref and <strong>we didn’t stop yet :)</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="numbers">numbers</h3>
+<ul>
+<li><span class="math">10<sup>9</sup></span> edges</li>
+<li><span class="math">2 × 10<sup>8</sup></span> nodes</li>
+<li><span class="math">6 × 10<sup>8</sup></span> properties</li>
+<li><span class="math">150</span> edge types</li>
+<li><span class="math">40</span> node types</li>
+</ul>
+<!-- * **`1,216,993,547`** relationships
+* `190,625,351` nodes
+* `584,436,429` properties
+* `144` relationship types
+* `42` node types
+ -->
+</section>
+<section class="slide level2">
+
+<h3 id="bio4j-structure">Bio4j structure</h3>
+<p>Bio4j importing process is <strong>modular</strong> and <strong>customizable</strong> allowing you to import just the data you are interested in.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="data-sources---modules-i">data sources - modules I</h3>
+<ul class="incremental">
+<li>Gene Ontology (GO)</li>
+<li>ExPASy Enzyme DB</li>
+<li>RefSeq</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="data-sources---modules-ii">data sources - modules II</h3>
+<ul class="incremental">
+<li>UniRef -&gt; 50, 90, 100</li>
+<li>NCBI taxonomy tree -&gt; GI index</li>
+<li>Uniprot KB -&gt; Swissprot/Trembl, interactions…</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="data-sources---modules-iii">data sources - modules III</h3>
+<p>Just keep in mind that you must be <strong>coherent</strong></p>
+<p><em>e.g. you cannot import protein interactions if you didn’t import any protein yet!</em></p>
+</section>
+<section class="slide level2">
+
+<h3 id="bio4j-apis">Bio4j APIs</h3>
+<ol class="incremental" type="1">
+<li>abstract <strong>domain model</strong></li>
+<li><strong>Blueprints</strong> implementation</li>
+<li><strong>technology-specific</strong> versions</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<h3 id="domain-model">domain model</h3>
+<p>Bio4j database has a <strong>well-defined</strong> domain model and all nodes and relationships comply with this abstract model</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img src="resources/images/Bio4jDomainModelWithCardinality.jpg" />
+</figure>
+</section>
+<section class="slide level2">
+
+<h3 id="domain-model-why">domain model <em>why?</em></h3>
+<ul>
+<li>abstract over Blueprints</li>
+<li>more precise <strong>typing</strong></li>
+<li>implementations can use technology-specific features</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="key-advantage">Key advantage</h3>
+<p><em>Different</em> <strong>graph topologies</strong> at the storage level, <em>same</em> <strong>domain model</strong>.</p>
+<p>Example: use <strong>type nodes</strong> in <em>Titan</em>, <strong>labels</strong> in <em>Neo4j</em>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="blueprints-layer">Blueprints layer</h3>
+<p>A default <strong><a href="https://github.com/tinkerpop/blueprints/">Blueprints</a></strong> implementation of the abstract model.</p>
+</section>
+<section class="slide level2">
+
+<p>Apart from the set of interfaces developed as the <strong>first layer</strong> for the <em>domain model</em> there’s an <strong>extra layer</strong> that uses <em>Blueprints</em>. This way we’re going one step further for making the domain model <strong>independent</strong> from the choice of <em>database technology</em></p>
+</section>
+<section class="slide level2">
+
+<h3 id="technology-specific">technology-specific</h3>
+<p>Optimizations, features, etc.</p>
+<ul>
+<li><strong><a href="https://github.com/neo4j/neo4j">Neo4j</a></strong></li>
+<li><strong><a href="https://github.com/thinkaurelius/titan/">Titan</a></strong> (WIP)</li>
+<li><strong><a href="https://github.com/orientechnologies/orientdb/">OrientDB</a></strong> (planned)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="why-neo4j">why Neo4j</h3>
+<ul class="incremental">
+<li>wide <strong>adoption</strong></li>
+<li>stable</li>
+<li><strong>Cypher</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="why-titan">why Titan</h3>
+<ul class="incremental">
+<li><strong>local!</strong> indexes</li>
+<li><strong>on-disk</strong> access</li>
+<li><strong>type</strong> definitions -&gt; <em>constraints!</em></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="bio4j-and-the-cloud">Bio4j and the cloud</h3>
+<ul>
+<li><strong>Interoperability</strong> and data distribution</li>
+<li><strong>Backup</strong> and <strong>storage</strong></li>
+<li><strong>Scalability</strong></li>
+<li>Applications and service providers on the cloud</li>
+<li>Cost-effective</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="dev-and-release-process">dev and release process</h3>
+<ul>
+<li>coordinate <strong>data</strong> and <strong>code</strong></li>
+<li><strong><a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a></strong></li>
+<li><strong>Cloud</strong> integration, distribution, deployment, …</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="how">how?</h3>
+<ul>
+<li><strong><a href="http://ohnosequences/statika">Statika</a></strong> cloud, data + code, modules (see <a href="https://fosdem.org/2014/schedule/event/graphdevroom_bio4j_1/">next talk</a>)</li>
+<li><strong><a href="https://github.com/sbt/sbt">sbt</a></strong> build Java + Scala, automated Bio4j-specific test &amp; release</li>
+<li><strong><a href="https://github.com/bio4j">git + github</a></strong> versioning, docs, collaboration, coordination</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><br/> <br/></p>
+<!-- How Bio4j -->
+<h3 id="how-to-use-bio4j"><em>how</em> to use Bio4j?</h3>
+<p>use cases, case studies, community</p>
+</section>
+<section class="slide level2">
+
+<h3 id="use-cases">use cases</h3>
+</section>
+<section id="section" class="slide level2">
+<h1><!--
+----
+
+### ??? and !!!
+
+I don't get what's this... :|
+--></h1>
+<h3 id="how-we-use-it">how we use it</h3>
+<ul>
+<li><strong><a href="http://bg7.ohnosequences.com">bg7</a></strong> genome annotation</li>
+<li><strong>mg7</strong> metagenomics analysis</li>
+<li>comparative genomics, network analysis, genome assembly, …</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="case-study-ii">case study II</h3>
+<p><strong>Ohio State University</strong></p>
+<ul>
+<li><strong>Integration</strong> and <strong>analysis</strong> of Chip-seq data</li>
+<li><strong>Modeling</strong> genomic information and <strong>gene regulatory networks</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="case-study-iii">case study III</h3>
+<p><strong>Berkeley Phylogenomics Group</strong></p>
+<ul>
+<li>Graph database for <em>Big Data challenges</em> in <strong>genomics</strong> developed <strong>on top of Bio4j</strong></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="community">community</h3>
+<ul>
+<li><strong><a href="http://twitter.com/bio4j">@bio4j</a></strong> twitter</li>
+<li><strong><a href="https://github.com/bio4j">bio4j</a></strong> github org</li>
+<li><strong><a href="http://groups.google.com/group/bio4j-user">bio4j-user</a></strong> google group</li>
+<li><strong><a href="http://www.linkedin.com/groups/Bio4j-3890937">bio4j</a></strong> linkedin</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><br/> <br/></p>
+<!-- How Bio4j -->
+<h3 id="whos-doing-bio4j"><em>who</em>’s doing Bio4j?</h3>
+<p>research group, team</p>
+</section>
+<section class="slide level2">
+
+<h3 id="oh-no-sequences">oh no sequences!</h3>
+<p><strong><a href="http://era7bioinformatics.com">Era7 bioinformatics</a></strong> R&amp;D group</p>
+<ul>
+<li><strong>web</strong> -&gt; <a href="http://ohnosequences.com">ohnosequences.com</a></li>
+<li><strong>Github</strong> -&gt; <a href="https://github.com/ohnosequences">ohnosequences</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="team">team</h3>
+<ul>
+<li><strong><a href="http://ohnosequences.com/ppareja">Pablo Pareja</a></strong> <br /> project leader &amp; main dev</li>
+<li><strong><a href="http://ohnosequences.com/eparejatobes">Eduardo Pareja-Tobes</a></strong><br /> technology &amp; architecture</li>
+<li><strong><a href="http://ohnosequences.com/rtobes">Raquel Tobes</a></strong> <br /> bio data integration</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="team-1">team</h3>
+<ul>
+<li><strong><a href="http://ohnosequences.com/aalekhin">Alexey Alekhin</a></strong> <br /> Statika, release process, dev</li>
+<li><strong><a href="http://ohnosequences.com/mmanrique">Marina Manrique</a></strong> <br /> bio data integration</li>
+<li><strong><a href="http://ohnosequences.com/ekovach">Evdokim Kovach</a></strong><br /> dev</li>
+</ul>
+</section>
+<section class="slide level2">
+
 </section>
 <!-- {{{{ dzslides core
 #
